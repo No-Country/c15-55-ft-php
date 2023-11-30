@@ -1,0 +1,15 @@
+.header {
+    background-color: #333;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.linkStyle {
+    color: #fff;
+    text-decoration: none;
+}
+
+.rightLink {
+    margin-right: 2rem;
+}

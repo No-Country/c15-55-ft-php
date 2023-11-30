@@ -1,0 +1,92 @@
+.homePageContainer {
+    text-align: center;
+    margin: 1.5rem auto;
+}
+
+/* title */
+.hPtitle {
+    background-color: aquamarine;
+    border: 1px solid black;
+}
+
+/* Caroussel */
+.section-photos {
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 4rem;
+    width: 90vw;
+    height: 450px;
+    max-width: 900px;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    background-color: lightgray;
+}
+
+.img-caroussel {
+    margin-bottom: 1rem;
+    width: 400px;
+    height: 350px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.prev, .next {
+    position: absolute;
+    width: 4rem;
+    height: 3rem;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+article.activeSlide {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+article.lastSlide {
+    transform: translateX(-100%);
+}
+
+article.nextSlide {
+    transform: translateX(100%);
+}
+
+/* Section baja de botones */
+.container-secciones {
+    display: flex;
+    margin-top: 4rem;
+    justify-content: space-between;
+}
+
+.calendario-btn, .audio-btn {
+    border: 1px solid black;
+    width: 45%;
+    cursor: pointer;
+}
+
+.icon-homePage {
+    max-width: 100%;
+}
