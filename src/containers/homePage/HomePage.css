@@ -3,15 +3,39 @@
     margin: 1.5rem auto;
 }
 
+/* title-container-carrouseel */
+.title-car-container {
+    display: flex;
+}
+
 /* title */
 .hPtitle {
-    background-color: aquamarine;
-    border: 1px solid black;
+    /* background-color: aquamarine; */
+    /* border: 1px solid black; */
+    width: 95%;
+    padding-top: 10%;
+    text-align: left;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-right: 2%;
+}
+
+.hPtitle h2 {
+    font-size: 2.5rem;
+}
+
+.hPtitle h3 {
+    font-size: 2rem;
+}
+
+.hPtitle p {
+    font-size: 1.5rem;
 }
 
 /* Caroussel */
 .section-photos {
     border: 1px solid black;
+    border-radius: 25px;
     margin: 0 auto;
     margin-top: 4rem;
     width: 90vw;
@@ -74,6 +98,12 @@ article.nextSlide {
     transform: translateX(100%);
 }
 
+/* Herramientas */
+.tools-h2 {
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+
 /* Section baja de botones */
 .container-secciones {
     display: flex;
@@ -89,4 +119,23 @@ article.nextSlide {
 
 .icon-homePage {
     max-width: 100%;
+}
+
+.calendario-btn {
+    background-image: url(../src/assets/calendarBW.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 300px;
+    border-radius: 20px;
+}
+
+.audio-btn {
+    background-image: url(../src/assets/galeriaIcon.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 20px;
+}
+
+.p-icon {
+    font-size: 2rem;
 }
