@@ -23,3 +23,4 @@ const recordatoriosdata = [
 ];
 
 export default recordatoriosdata;
+export { recordatoriosdata } ;
