@@ -8,6 +8,7 @@ import Login from './containers/login/Login';
 import Signup from './containers/signup/Signup';
 import ProfilePage from './containers/profilePage/ProfilePage';
 import Recordatorios from './containers/Recordatorios/Recordatorios';
+import Root from './containers/Root/Root';
 import Header from './components/header/Header';
 import Galeria from './containers/galeria/Galeria';
 import LandingPage from './containers/landingPage/LandingPage';
@@ -28,13 +29,15 @@ function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
     <>
-      <Route path="/" element={<><Header /> <HomePage /></>} />
+      <Route path="landing" element={<LandingPage /> } />
+      <Route path="/" element={<Root />} >
+        <Route path="homePage" element={<HomePage />} />
+        <Route path="reminders" element={<Recordatorios /> } />
+        <Route path="gallery" element={<Galeria /> } />    
+        <Route path="/profile" element={<ProfilePage /> } />
+      </Route>
       <Route path="/login" element={<Login /> } />
       <Route path="/signup" element={<Signup /> } />
-      <Route path="/profile" element={<ProfilePage /> } />
-      <Route path="/reminders" element={<Recordatorios /> } />
-      <Route path="/gallery" element={<Galeria /> } />
-      <Route path="landing" element={<LandingPage /> } />
     </>
   ));
 

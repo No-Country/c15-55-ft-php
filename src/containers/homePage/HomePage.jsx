@@ -13,6 +13,10 @@ const HomePage = () => {
     navigate("/reminders");
   };
 
+  const toGallery = () => {
+    navigate("/gallery");
+  };
+
   useEffect(() => {
     const lastIndex = pics.length -1;
     if(index < 0){
@@ -70,7 +74,7 @@ const HomePage = () => {
           {/* <img className='icon-homePage' src='../src/assets/calendarBW.jpg' alt='calendario' /> */}
           <p className='p-icon'>Recordatorios</p>
         </div>
-        <div className='audio-btn' >
+        <div className='audio-btn' onClick={toGallery}>
           {/* <img className='icon-homePage' src="../src/assets/galeriaIcon.jpg" alt='audio player' /> */}
           <p className='p-icon'>Galeria</p>
         </div>

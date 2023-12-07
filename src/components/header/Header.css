@@ -8,6 +8,12 @@
 .linkStyle {
     color: #fff;
     text-decoration: none;
+    border-radius: 18px;
+    font-size: 1rem;
+}
+
+.linkStyle-active {
+    background-color: blue;
 }
 
 .rightLink {
