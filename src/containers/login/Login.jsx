@@ -8,8 +8,8 @@ const Login = () => {
         <div className="column_left" />
         <div className="column_right">
           <div className="form_container">
-            <h1>Bienvenido de nuevo</h1>
-            <p>Tus recuerdos esperan</p>
+            <h1 className="titulo">Bienvenido de nuevo</h1>
+            <p className="parrafo">Tus recuerdos esperan</p>
             <form>
               <div className="form_group">
                 <label>Correo electrónico</label>
@@ -20,9 +20,9 @@ const Login = () => {
                 <input type="password" placeholder="Contraseña" />
               </div>
               <div className="form_group_2col">
-                <div>
+                <div class="form_group_checkbox">
                   <input type="checkbox" />
-                  <label>Recuérdame</label>
+                  <label class="texto_checkbox">Recuérdame</label>
                 </div>
                 <div>
                   <a className="links" href="#">
@@ -31,7 +31,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="form_group">
-                <button type="submit">Iniciar sesión</button>
+                <button className="boton_enviar" type="submit">Iniciar sesión</button>
               </div>
             </form>
             <div className="form_group">

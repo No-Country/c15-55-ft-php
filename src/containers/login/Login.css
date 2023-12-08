@@ -1,11 +1,9 @@
-
-h1 {
-  margin: 0 auto;
-  font-size: 1.5rem;
-}
-p {
-  margin: 0 auto;
-  font-size: 0.9rem;
+html, 
+body {
+  margin: 0;
+  padding: 0;
+  width:100%;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .login_container {
   margin: 0 auto;
@@ -21,11 +19,27 @@ p {
   flex: 50%;
   padding: 10vw 10vw;
 }
+.titulo {
+  margin:0;
+  color: #202020;
+  font-size: 2.1875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.parrafo {
+  margin: 0;
+  color: #353535;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 form {
   margin: 25px auto;
 }
 .form_container {
-   width:75%;
+   width:55%;
 }
 .form_group {
   margin: 15px 0;
@@ -33,27 +47,78 @@ form {
   flex-direction: column;
 }
 .form_group label {
-  font-size: 0.85rem;
+  color: #202020;
+  font-size: 1.25rem;
+  font-style: normal;
   font-weight: 600;
+  line-height: normal;
 }	
 .form_group_2col {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: 0.75rem;
 }	
-.form_group input, .form_group button {
+.form_group_checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.texto_checkbox {
+  margin:0 0 0 5px;
+  color: #202020;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.form_group_2col a{
+  color: #202020;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.form_group input {
   margin:5px 0;
-  padding: 1px 5px;
-  height:5vh;
-  font-size:0.8rem;
+  padding: 1px 15px;
+  height: 45px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  color: #606060;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
+}
+.boton_enviar {
+  margin:5px 0;
+  padding: 1px 15px;
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #606060;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
 }
 .nuevo {
-    font-size: 0.75rem;
-    font-weight: 600;
+  color: #353535;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
 }
-.link {
-    font-size: 0.75rem;
+.links {
+  color: #000;
+  text-align: center;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: none;
 }
