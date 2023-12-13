@@ -41,9 +41,18 @@ const HomePage = () => {
     <div className='homePageContainer'>
       <div className='title-car-container'>
         <div className='hPtitle'>
-          <h2>Hola User190212</h2>
-          <h3>Bienvenido a tu muro!</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Pellentesque elit eget gravida cum sociis natoque penatibus et. Adipiscing bibendum est ultricies integer quis auctor.</p>
+          <h2>Hola <strong className='username'>User190212</strong></h2>
+          <h4 className='subtitle'>Este espacio esta disenado para ayudarte a recordar las cosas importantes de tu vida, incluso si tienes alzaheimer.</h4>
+          <p className='subtitle'>Con Re-Mind podras:</p>
+          <ul>
+            <li>Establecer recordatorios para eventos importantes, como citas medicas o reuniones familiares.</li>
+            <li>Almacenar recuerdos personales, como fotos y videos.</li>
+          </ul>
+          <div className='container-btn-empezar'>
+            <div className='btn-empezar'>
+              <p>Empezar</p>
+            </div>
+          </div>
         </div>
           <div className='section-photos'>
             {
@@ -63,7 +72,7 @@ const HomePage = () => {
                   </article>
                 )
               })
-            };
+            }
             {/* <button className='prev' onClick={() => setIndex(index - 1)}>⬅️</button> */}
             {/* <button className='next' onClick={() => setIndex(index + 1)}>➡️</button> */}
           </div>

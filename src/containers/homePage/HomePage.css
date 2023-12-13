@@ -1,6 +1,13 @@
+body {
+    color: #711773;
+    font-family: 'Josefin Sans', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+}
+
 .homePageContainer {
     text-align: center;
-    margin: 1.5rem auto;
+    margin: 0 auto;
 }
 
 /* title-container-carrouseel */
@@ -13,7 +20,7 @@
     /* background-color: aquamarine; */
     /* border: 1px solid black; */
     width: 95%;
-    padding-top: 10%;
+    padding-top: 7%;
     text-align: left;
     padding-left: 2%;
     padding-right: 2%;
@@ -24,6 +31,10 @@
     font-size: 2.5rem;
 }
 
+.username {
+    font-size: larger;
+}
+
 .hPtitle h3 {
     font-size: 2rem;
 }
@@ -32,10 +43,50 @@
     font-size: 1.5rem;
 }
 
+.subtitle {
+    color: #c423d9;
+}
+
+ul {
+    color: #580359;
+}
+
+li {
+    list-style: disc;
+    font-weight: bold;
+}
+
+.container-btn-empezar {
+    display: flex;
+    margin-top: 5rem;
+}
+
+.btn-empezar {
+    border: 1px solid #c423d9;
+    border-radius: 15px;
+    background-color: #c423d9;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 40%;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.btn-empezar:hover {
+    background-color: #711773;
+}
+
+.btn-empezar:active {
+    background-color: #580359;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}
+
 /* Caroussel */
 .section-photos {
-    border: 1px solid black;
-    border-radius: 25px;
+    /* border: 1px solid black; */
+    /* border-radius: 25px; */
     margin: 0 auto;
     margin-top: 4rem;
     width: 90vw;
@@ -46,15 +97,17 @@
     position: relative;
     display: flex;
     overflow: hidden;
-    background-color: lightgray;
+    /* background-color: lightgray; */
 }
 
 .img-caroussel {
     margin-bottom: 1rem;
-    width: 400px;
+    width: 450px;
     height: 350px;
     object-fit: cover;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 25px;
+    margin-top: 2.5rem;
 }
 
 .prev, .next {
@@ -101,14 +154,17 @@ article.nextSlide {
 /* Herramientas */
 .tools-h2 {
     font-size: 2rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 /* Section baja de botones */
 .container-secciones {
     display: flex;
-    margin-top: 4rem;
-    justify-content: space-between;
+    margin: 1rem auto;
+    /* justify-content: space-between; */
+    justify-content: space-around;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .calendario-btn, .audio-btn {
