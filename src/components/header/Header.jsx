@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 function Header() {
   return (
     <div className='header'>
-        <NavLink to="/homePage" className='linkStyle'>LOGO HERE</NavLink>
+        <NavLink to="/homePage" className='linkStyle'>Re-Mind</NavLink>
         <div className='rightLinks'>
           <NavLink to="/gallery" className={({ isActive }) => `linkStyle rightLink ${isActive ? `linkStyle-active` : ''}`}>Galeria</NavLink>
           <NavLink to="/reminders" className={({ isActive }) => `linkStyle rightLink ${isActive ? `linkStyle-active` : ''}`}>Recordatorios</NavLink>

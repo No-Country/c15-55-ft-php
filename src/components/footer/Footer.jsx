@@ -4,8 +4,8 @@ import "../footer/Footer.css";
 function Footer() {
   return (
     <div className='footer'>
-        <h3>This is a footer!</h3>
-        <p>Coming Soon... 😺</p>
+        <p>Todos los derechos reservados.</p><br />
+        <p>© 2023 c15-55-ft-React</p>
     </div>
   )
 }
