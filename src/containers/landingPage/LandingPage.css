@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --violeta: #580359;
+  --blanco: #ffffff;
+  --violeta-claro: #CE2CE4;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+.bg-violeta {
+  background-color: var(--violeta);
+}
+h1 {
+  margin:0;
+  padding:0;
+  color: var(--violeta);
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+h2 {
+  margin:0;
+  padding:0;
+  color: #000;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+h3 {
+  margin:0;
+  padding:0;
+  color: #000;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+.imagen-fondo {
+  background-image: url('/src/assets/imagen-hero.jpeg');
+  
+}
+.subtitulo {
+  margin:0;
+  padding:0;
+  color: var(--violeta);
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.contenedor {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.contenedor-row {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction:row;
+  }
+  .boton {
+    background-color:var(--violeta-claro);
+    border-radius: 10px;
+    color:var(--blanco);
+    padding: 10px 25px;
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+  }
+  .parrafo-small {
+    font-size: 20px;
+    color:var(--violeta);
+    font-weight: 400;
+  }
