@@ -1,0 +1,37 @@
+.btn-add-container {
+    padding: .8rem;
+    display: flex;
+    justify-content: center;
+    /* border-bottom: 1px solid #711773; */
+    margin-bottom: 0.8rem;
+}
+
+.btn-add-reminder {
+    border: 1px solid #c423d9;
+    background-color: #c423d9;
+    color: white;
+    /* width: 25%; */
+    text-align: center;
+    border-radius: 10px;
+    padding: .5rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    justify-content: center;
+}
+
+.btn-add-reminder:hover {
+    background-color: #711773;
+}
+
+.btn-add-reminder:active {
+    background-color: #580359;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+.form-Component-activo {
+    display: flex;
+    text-align: center;
+    border: 2px solid #580359;
+    margin: 1rem auto;
+}
