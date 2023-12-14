@@ -29,6 +29,7 @@ function App() {
   const [recordatorios, setRecordatorios] = useState(recordatoriosdata);
   // abrir console en developer tools para ver nuestra data:
   // console.log(usersData, fotos, recordatorios);
+  // esto es un test!
 
   const [reminders, setReminders] = useState();
 
