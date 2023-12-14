@@ -5,11 +5,11 @@ import { NavLink } from 'react-router-dom';
 function Header() {
   return (
     <div className='header'>
-        <NavLink to="/" className='linkStyle'>LOGO HERE</NavLink>
+        <NavLink to="/homePage" className='linkStyle'>Re-Mind</NavLink>
         <div className='rightLinks'>
-            <NavLink to="/gallery" className='linkStyle rightLink'>Galeria</NavLink>
-            <NavLink to="/reminders" className='linkStyle rightLink'>Recordatorios</NavLink>
-            <NavLink to="/profile" className='linkStyle rightLink'>Perfil</NavLink>
+          <NavLink to="/gallery" className={({ isActive }) => `linkStyle rightLink ${isActive ? `linkStyle-active` : ''}`}>Galeria</NavLink>
+          <NavLink to="/reminders" className={({ isActive }) => `linkStyle rightLink ${isActive ? `linkStyle-active` : ''}`}>Recordatorios</NavLink>
+          <NavLink to="/profile" className={({ isActive }) => `linkStyle rightLink ${isActive ? `linkStyle-active` : ''}`}>Perfil</NavLink>
         </div>
     </div>
   )
