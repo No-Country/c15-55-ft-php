@@ -31,4 +31,7 @@ Currently, two official plugins are available:
         <li>font-family: 'Roboto', sans-serif;</li>
     </ul>
 
+### FireBase added
+    npm install firebase
+
 #happyCoding 😁
