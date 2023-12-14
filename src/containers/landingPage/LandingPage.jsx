@@ -3,34 +3,26 @@ import './LandingPage.css';
 
 function LandingPage() {
   return (
-    <>
+<>
   <header>
-    <div>
+    <div className="contenedor bg-violeta">
       <img src="" alt="Logotipo" />
       <a href="">Iniciar Sesión</a>
     </div>
-    S
   </header>
   <main>
     <div className="contenedor">
-      <h1>Recuerda lo que es importante</h1>
-      <p className="subtitulo">
-        La vida está llena de momentos maravillosos que merecen ser recordados.
-      </p>
+      <h1>Bienvenido a Re-Mind</h1>
+      <p className="subtitulo">Recuerda lo que es importante</p>
     </div>
-    <div className="contenedor-row">
-      <div>
-        <img
-          src="/src/assets/placeholder-image.jpg"
-          width="648px"
-          height="511px"
-          alt="Imagen de la aplicación"
-        />
-      </div>
+    <div className="contenedor-row imagen-fondo">
+      <div></div>
       <div>
         <h2>Sube fotos de tus seres queridos</h2>
-        <p>Nunca te pierdas un momento especial.</p>
-        <a href="">Crear recuerdos</a>
+        <p className="parrafo-small">Nunca te pierdas un momento especial.</p>
+        <a href="" className="boton">
+          Crear recuerdos
+        </a>
       </div>
     </div>
     <div className="contenedor-row">
@@ -151,7 +143,7 @@ function LandingPage() {
       <a href="">Comenzar</a>
     </div>
   </section>
-  <footer>
+  <footer className="contenedor bg-violeta">
     <img src="" alt="Logotipo" />
     <a href="">
       <img />
@@ -161,6 +153,7 @@ function LandingPage() {
     </div>
   </footer>
 </>
+
   )
 }
 
