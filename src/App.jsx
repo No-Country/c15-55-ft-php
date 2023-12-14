@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -16,6 +16,8 @@ import users from './data/users';
 import fotosdata from './data/fotosdata';
 import recordatoriosdata from './data/recordatoriosdata';
 
+import { collection, getDocs } from "firebase/firestore";
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,7 +27,6 @@ function App() {
   const [recordatorios, setRecordatorios] = useState(recordatoriosdata);
   // abrir console en developer tools para ver nuestra data:
   console.log(usersData, fotos, recordatorios);
-
 
   const router = createBrowserRouter(createRoutesFromElements(
     <>
