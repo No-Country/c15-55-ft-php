@@ -1,5 +1,6 @@
 import React from 'react';
 import './LandingPage.css';
+import { Link } from 'react-router-dom';
 
 function LandingPage() {
   return (
@@ -7,7 +8,7 @@ function LandingPage() {
   <header>
     <div className="contenedor bg-violeta">
       <img src="" alt="Logotipo" />
-      <a href="">Iniciar Sesión</a>
+      <Link to="/login">Iniciar Sesión</Link>
     </div>
   </header>
   <main>

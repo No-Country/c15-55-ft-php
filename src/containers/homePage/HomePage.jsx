@@ -10,11 +10,11 @@ const HomePage = () => {
 
 
   const toReminders = () => {
-    navigate("/reminders");
+    navigate("/v1/reminders");
   };
 
   const toGallery = () => {
-    navigate("/gallery");
+    navigate("/v1/gallery");
   };
 
   useEffect(() => {
