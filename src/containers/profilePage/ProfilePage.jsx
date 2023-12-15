@@ -3,8 +3,13 @@
 import React, { useEffect, useState } from 'react';
 import { FaUser, FaEnvelope, FaCamera, FaEdit, FaLock, FaSignOutAlt, FaSave } from 'react-icons/fa';
 import './ProfilePage.css';
+import { useNavigate } from 'react-router-dom';
+
+import { getAuth, signOut } from "firebase/auth";
 
 const ProfilePage = () => {
+  const navigate = useNavigate();
+
   const [userData, setUserData] = useState({
     username: 'u$eR',
     email: 'usuario@example.com',
@@ -28,6 +33,15 @@ const ProfilePage = () => {
     // Lógica para cerrar sesión, por ejemplo, redirigiendo a la página de inicio de sesión
     // Puedes usar el enrutador (React Router) o realizar otras acciones según tus necesidades
     // Ejemplo: history.push('/login');
+    const auth = getAuth();
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      console.log('logout successful');
+      navigate('/login');
+    }).catch((error) => {
+      // An error happened.
+      console.log(error);
+    });
   };
 
   const handleEdit = () => {
