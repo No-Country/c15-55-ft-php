@@ -50,13 +50,13 @@ function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
     <>
-      <Route path="/landing" element={<LandingPage /> } />
-      <Route path="/" element={<Root />} >
+      <Route path="/" element={<LandingPage /> } />
+      <Route path="/v1" element={<Root />} >
         <Route path="homePage" element={<HomePage />} />
         <Route path="reminders" element={<Recordatorios reminders={reminders} setReminders={setReminders} getReminders={getReminders} /> } />
         <Route path="add" element={<AddReminder getReminders={getReminders}/>} />
         <Route path="gallery" element={<Galeria /> } />    
-        <Route path="/profile" element={<ProfilePage /> } />
+        <Route path="profile" element={<ProfilePage /> } />
       </Route>
       <Route path="/login" element={<Login /> } />
       <Route path="/signup" element={<Signup /> } />
