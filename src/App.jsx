@@ -19,6 +19,7 @@ import AddReminder from './components/reminderForm/AddReminder';
 
 import { db } from "../src/config/firestore";
 import { collection, getDocs } from "firebase/firestore";
+import NotFound from './components/notFound/NotFound';
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
       </Route>
       <Route path="/login" element={<Login /> } />
       <Route path="/signup" element={<Signup /> } />
+      <Route path="*" element={<NotFound /> } />
     </>
   ));
 
