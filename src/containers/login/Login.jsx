@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
+import { useNavigate } from 'react-router-dom';
+
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
+
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const auth = getAuth();
+    try {
+      await signInWithEmailAndPassword(auth, email, password)
+      console.log(`Login Success!`);
+      navigate('/homePage');
+    } catch (error) {
+      console.log(error); 
+    }
+  };
+
   return (
     <div className="login">
       <div className="login_container">
@@ -10,19 +31,21 @@ const Login = () => {
           <div className="form_container">
             <h1 className="titulo">Bienvenido de nuevo</h1>
             <p className="parrafo">Tus recuerdos esperan</p>
-            <form>
+            <form onSubmit={handleLogin}>
               <div className="form_group">
-                <label>Correo electrónico</label>
-                <input type="text" placeholder="Correo electrónico" />
+                <label htmlFor='email'>Correo electrónico</label>
+                <input id='email' type="email" name='email' placeholder="user@email.com" value={email} 
+                  onChange={e => setEmail(e.target.value)}/>
               </div>
               <div className="form_group">
-                <label>Contraseña</label>
-                <input type="password" placeholder="Contraseña" />
+                <label htmlFor='password'>Contraseña</label>
+                <input id='password' type="password" name='password' placeholder="Contraseña" value={password} 
+                  onChange={e => setPassword(e.target.value)}/>
               </div>
               <div className="form_group_2col">
-                <div class="form_group_checkbox">
+                <div className="form_group_checkbox">
                   <input type="checkbox" />
-                  <label class="texto_checkbox">Recuérdame</label>
+                  <label className="texto_checkbox">Recuérdame</label>
                 </div>
                 <div>
                   <a className="links" href="#">
