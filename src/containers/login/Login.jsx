@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
 
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
 
@@ -48,9 +48,9 @@ const Login = () => {
                   <label className="texto_checkbox">Recuérdame</label>
                 </div>
                 <div>
-                  <a className="links" href="#">
+                  <Link className="links" to='#'>
                     ¿Olvidaste tu contraseña?
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="form_group">
@@ -60,9 +60,9 @@ const Login = () => {
             <div className="form_group">
               <p className="nuevo">
                 ¿Eres nuevo?{' '}
-                <a className="links" href="#">
+                <Link className="links" to='/signup'>
                   Crea una cuenta
-                </a>
+                </Link>
               </p>
             </div>
           </div>

@@ -1,6 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const Signup = () => {
+
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const navigate = useNavigate();
+
+  const handleCreate = async (e) => {
+    e.preventDefault();
+    const auth = getAuth();
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      console.log('User created');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   return (
     <div className="login">
   <div className="login_container">
@@ -9,18 +30,20 @@ const Signup = () => {
       <div className="form_container">
         <h1>Crea una cuenta</h1>
         <p>Proporciona tus datos</p>
-        <form>
+        <form onSubmit={handleCreate}>
           <div className="form_group">
             <label>Tu Nombre</label>
             <input type="text" placeholder="Rogelio Mansilla" />
           </div>
           <div className="form_group">
-            <label>Correo electrónico</label>
-            <input type="text" placeholder="ejemplo@gmail.com" />
+            <label htmlFor='email'>Correo electrónico</label>
+            <input id='email' type="email" name='email' placeholder="email@gmail.com"  value={email}
+              onChange={e => setEmail(e.target.value)} required/>
           </div>
           <div className="form_group">
-            <label>Contraseña</label>
-            <input type="password" placeholder="Tdfg%63S" />
+            <label htmlFor='password'>Contraseña</label>
+            <input id='password' type="password" name='password' placeholder="Tdfg%63S" value={password} 
+              onChange={e => setPassword(e.target.value)} required/>
           </div>
           <div className="form_group_2col">
             <div>
@@ -32,15 +55,15 @@ const Signup = () => {
             </div>
           </div>
           <div className="form_group">
-            <button type="submit">Iniciar sesión</button>
+            <button type="submit">Crear Cuenta</button>
           </div>
         </form>
         <div className="form_group">
           <p className="nuevo">
             ¿Ya Eres usuario?{" "}
-            <a className="links" href="#">
+            <Link className="links" to='/login'>
               Inicia Sesión
-            </a>
+            </Link>
           </p>
         </div>
       </div>
