@@ -16,31 +16,29 @@ import users from './data/users';
 import fotosdata from './data/fotosdata';
 import recordatoriosdata from './data/recordatoriosdata';
 import AddReminder from './components/reminderForm/AddReminder';
+import NotFound from './components/notFound/NotFound';
+// import { useNavigate, useHistory } from 'react-router-dom';
 
 import { db } from "../src/config/firestore";
 import { collection, getDocs } from "firebase/firestore";
-import NotFound from './components/notFound/NotFound';
-
+import { getAuth } from "firebase/auth";
 
 function App() {
-  const [count, setCount] = useState(0)
   // Ejemplo de como guardar la fakedata en un Array
   const [usersData, setUsersData] = useState(users);
   const [fotos, setFotos] = useState(fotosdata);
   const [recordatorios, setRecordatorios] = useState(recordatoriosdata);
-  // abrir console en developer tools para ver nuestra data:
-  // console.log(usersData, fotos, recordatorios);
-  // esto es un test!
-
   const [reminders, setReminders] = useState();
+
+  // const navigate = useNavigate();
+  // const history = useHistory();
+
+  const auth = getAuth();
+  const user = auth.currentUser;
 
   const getReminders = async() => {
     const querySnapshot = await getDocs(collection(db, "reminders"));
     const reminders = querySnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
-    // querySnapshot.forEach((doc) => {
-    //   console.log(`${doc.id} => ${doc.data()}`);
-    //   console.log(doc.id, " => ", doc.data());
-    // });  
     setReminders(reminders);
   };
 
@@ -48,7 +46,17 @@ function App() {
     getReminders();
     console.log(reminders);
   }, [setReminders]);
-
+  
+  if(!user) {
+    console.log('No user logged in');
+  } else {
+    const currentUser = {
+      uid: user.uid,
+      email: user.email,
+    }
+    console.log(currentUser);
+  }
+  
   const router = createBrowserRouter(createRoutesFromElements(
     <>
       <Route path="/" element={<LandingPage /> } />
