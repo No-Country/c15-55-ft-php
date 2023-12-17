@@ -17,35 +17,18 @@ import fotosdata from './data/fotosdata';
 import recordatoriosdata from './data/recordatoriosdata';
 import AddReminder from './components/reminderForm/AddReminder';
 import NotFound from './components/notFound/NotFound';
-// import { useNavigate, useHistory } from 'react-router-dom';
 
-import { db } from "../src/config/firestore";
-import { collection, getDocs } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
+import UpdateRecordatorioForm from './components/updateRecordatorioForm/UpdateRecordatorioForm';
 
 function App() {
   // Ejemplo de como guardar la fakedata en un Array
   const [usersData, setUsersData] = useState(users);
   const [fotos, setFotos] = useState(fotosdata);
   const [recordatorios, setRecordatorios] = useState(recordatoriosdata);
-  const [reminders, setReminders] = useState();
-
-  // const navigate = useNavigate();
-  // const history = useHistory();
 
   const auth = getAuth();
   const user = auth.currentUser;
-
-  const getReminders = async() => {
-    const querySnapshot = await getDocs(collection(db, "reminders"));
-    const reminders = querySnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
-    setReminders(reminders);
-  };
-
-  useEffect(() => {
-    getReminders();
-    console.log(reminders);
-  }, [setReminders]);
   
   if(!user) {
     console.log('No user logged in');
@@ -60,15 +43,16 @@ function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <>
       <Route path="/" element={<LandingPage /> } />
+      <Route path="/login" element={<Login /> } />
+      <Route path="/signup" element={<Signup /> } />
       <Route path="/v1" element={<Root />} >
         <Route path="homePage" element={<HomePage />} />
-        <Route path="reminders" element={<Recordatorios reminders={reminders} setReminders={setReminders} getReminders={getReminders} /> } />
-        <Route path="add" element={<AddReminder getReminders={getReminders}/>} />
+        <Route path="reminders" element={<Recordatorios /> } />
+        <Route path="reminders/:id" element={<UpdateRecordatorioForm />} />
+        <Route path="add" element={<AddReminder />} />
         <Route path="gallery" element={<Galeria /> } />    
         <Route path="profile" element={<ProfilePage /> } />
       </Route>
-      <Route path="/login" element={<Login /> } />
-      <Route path="/signup" element={<Signup /> } />
       <Route path="*" element={<NotFound /> } />
     </>
   ));

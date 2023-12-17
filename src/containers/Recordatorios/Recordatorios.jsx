@@ -3,15 +3,19 @@ import { recordatoriosdata } from "../../data/recordatoriosdata";
 import "../Recordatorios/Recordatorios.css";
 import RecuerdoCard from '../../components/recuerdosCard/RecuerdoCard';
 import { useNavigate } from 'react-router-dom';
+import { useGlobalContext } from '../../context';
 
-const Recordatorios = ({ reminders, setReminders, getReminders } ) => {
+const Recordatorios = () => {
   // const [recordatorios, setRecordatorios] = useState(reminders);
-  console.log(reminders);
+  // console.log(reminders);
+
+  const { recordatorios, getReminders } = useGlobalContext();
+  console.log(`esto viene de global:`,  recordatorios);
 
   const navigate = useNavigate();
 
   const addReminder = () => {
-    navigate('/add');
+    navigate('/v1/add');
   }
 
   return (
@@ -23,10 +27,10 @@ const Recordatorios = ({ reminders, setReminders, getReminders } ) => {
       </div>
       <div>
         {
-          reminders ? (
-            reminders.map((recordatorio) => {
+          recordatorios ? (
+            recordatorios.map((recordatorio) => {
               return (
-                <RecuerdoCard key={recordatorio.id} recordatorio={recordatorio} setReminders={setReminders} reminders={reminders} getReminders={getReminders} />
+                <RecuerdoCard key={recordatorio.id} recordatorio={recordatorio} />
               )
             })
           ) : 

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../reminderForm/AddReminder.css";
+import { useGlobalContext } from '../../context';
 
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../config/firestore";
 
-function AddReminder({ getReminders }) {
+function AddReminder() {
+    const { getReminders } = useGlobalContext();
 
     const [title, setTitle] = useState('');
     const [asunto, setAsunto] = useState('');
@@ -34,7 +36,7 @@ function AddReminder({ getReminders }) {
             } catch (error) {
                 console.log("Error: ", error);
             }
-        navigate('/homePage');
+        navigate('/v1/homePage');
     };
 
     const getFechaHoy = () => {
