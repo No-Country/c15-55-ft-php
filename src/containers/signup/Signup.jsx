@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../config/firestore";
 
 const Signup = () => {
 
@@ -14,8 +16,13 @@ const Signup = () => {
     e.preventDefault();
     const auth = getAuth();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      console.log('User created');
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      await addDoc(collection(db, "users"), {
+        uid: user.uid,
+        email: user.email,
+      });
+      console.log(`User Created: ${user.uid}, ${user.email}`);
     } catch (error) {
       console.log(error);
     }
