@@ -28,7 +28,7 @@ body {
 }
 
 .hPtitle h2 {
-    font-size: 2rem;
+    font-size: 2em;
 }
 
 .username {
@@ -193,5 +193,5 @@ article.nextSlide {
 }
 
 .p-icon {
-    font-size: 2rem;
+    font-size: 1em;
 }

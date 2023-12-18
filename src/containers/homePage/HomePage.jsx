@@ -68,7 +68,7 @@ const HomePage = () => {
                 return (
                   <article key={id} className={position}>
                     <img src={image} alt={title} className='img-caroussel'/>
-                    <h3>{name}</h3>
+                    <h2>{name}</h2>
                   </article>
                 )
               })
