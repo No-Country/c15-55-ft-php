@@ -1,3 +1,17 @@
+main {
+    background-color: #F2F2F6;
+}
+
+.main-recordatorios-div {
+    /* background-color: #E9E9EB; */
+    /* background-color: #E4E4E5; */
+    /* background-color: #F2F2F6; */
+}
+
+.main-recordatorios-div h2 {
+    margin: .5em;
+}
+
 .btn-add-container {
     padding: .8rem;
     display: flex;
@@ -10,15 +24,73 @@
     border: 1px solid #c423d9;
     background-color: #c423d9;
     color: white;
-    /* width: 25%; */
     text-align: center;
     border-radius: 10px;
-    padding: .5rem;
+    padding: 1rem;
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     justify-content: center;
+    font-size: large;
+    font-weight: 500;
 }
 
+/* Seccion de botones Reminders */
+.section-containers-btns {
+    /* border: 2px solid red; */
+    padding: 1em;
+}
+
+.div-reminder {
+    border: 1px solid transparent;
+    border-radius: 20px;
+    margin-bottom: 2em;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.div-icon {
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    margin-left: .5em;
+    margin-top: .5em;
+    font-size: xx-large;
+    color: white;
+    /* border: 1px solid black; */
+    border-radius: 33px;
+    padding: 15px;
+}
+
+.icon-today {
+    background-color: blueviolet;
+}
+
+.icon-all {
+    background-color: lightslategray;
+}
+
+.div-icon p {
+    margin-right: 1em;
+    color: black;
+    font-size: x-large;
+    font-weight: 800;
+}
+
+.div-sb {
+    /* border: 1px solid green; */
+    font-size: large;
+    font-weight: 800;
+    color: lightslategrey;
+}
+
+.div-sb p {
+    margin-left: 1em;
+}
+
+/* Cards Container */
 .btn-add-reminder:hover {
     background-color: #711773;
 }

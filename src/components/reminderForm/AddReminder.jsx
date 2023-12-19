@@ -7,7 +7,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../config/firestore";
 
 function AddReminder() {
-    const { getReminders } = useGlobalContext();
+    const { getReminders, currentUser } = useGlobalContext();
 
     const [title, setTitle] = useState('');
     const [asunto, setAsunto] = useState('');
@@ -21,7 +21,7 @@ function AddReminder() {
         asunto: asunto,
         date: fecha,
         hora: hora,
-        user_Id: userID
+        user_Id: currentUser.uid
     };
 
     const handleAdd = async(e) => {
@@ -43,6 +43,7 @@ function AddReminder() {
         const [month, day, year] = new Date().toLocaleDateString("en-US").split("/");
         return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
     };
+    console.log(getFechaHoy());
 
     const getHoraNow = () => {
         const now = new Date();

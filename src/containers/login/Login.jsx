@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { useNavigate, Link } from 'react-router-dom';
+import { useGlobalContext } from '../../context';
 
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
-
+  const { setCurrentUser, currentUser } = useGlobalContext();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,8 +16,13 @@ const Login = () => {
     e.preventDefault();
     const auth = getAuth();
     try {
-      await signInWithEmailAndPassword(auth, email, password)
-      console.log(`Login Success!`);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      let user = userCredential.user;
+      setCurrentUser({
+        uid: user.uid,
+        email: user.email,
+      });
+      console.log(`Login Success!, ${currentUser.uid} `);
       navigate('/v1/homePage');
     } catch (error) {
       console.log(error); 
