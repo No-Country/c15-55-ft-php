@@ -1,0 +1,49 @@
+.form-container {
+    padding: 1em;
+}
+
+.form-container h2 {
+    /* padding-top: .2em; */
+}
+
+.center-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.form-outer-div {
+    max-width: 1000px;
+    width: 80%;
+    text-align: center;
+    padding: 2em;
+    border: 1px solid transparent;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.form-outer-div p {
+    font-size: larger;
+    font-weight: 600;
+}
+
+form {
+    background-color: white;
+}
+
+form input {
+    background-color: #ECECF1;
+    font-size: large;
+}
+
+.submit-btn {
+    background-color: #0C79FE;
+    color: #FFFFFF;
+    font-size: large;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #1d4678;
+}

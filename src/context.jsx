@@ -22,6 +22,23 @@ const AppProvider = ({ children }) => {
         getReminders();
     }, [setRecordatorios]);
 
+    // // testing ---->
+    // const [myRecordatorios, SetMyRecordatorios] = useState();
+    // const [allTotal, setAllTotal] = useState([]);
+
+    // useEffect(() => {
+    //     const filteredRecords = recordatorios.filter((x) => x.user_Id === currentUser.uid);
+    //     SetMyRecordatorios(filteredRecords);
+    //     if (filteredRecords.length > 0) {
+    //         setAllTotal(filteredRecords.length);
+    //     } else {
+    //         setAllTotal(0);
+    //     }
+    // }, [recordatorios, currentUser]);
+
+
+    // // testting --->
+
     return (
         <AppContext.Provider 
             value={{
@@ -30,6 +47,8 @@ const AppProvider = ({ children }) => {
                 getReminders,
                 currentUser,
                 setCurrentUser,
+                // myRecordatorios,
+                // allTotal,
             }}>
                 {children}
         </AppContext.Provider>

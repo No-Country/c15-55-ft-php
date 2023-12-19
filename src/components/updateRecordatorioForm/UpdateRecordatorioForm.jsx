@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useGlobalContext } from '../../context';
+import '../updateRecordatorioForm/UpdateRecordatorioForm.css';
 
 import { db } from '../../config/firestore';
 import { doc, getDoc, setDoc } from "firebase/firestore";
 
 function UpdateRecordatorioForm() {
+    const { currentUser, getReminders } = useGlobalContext();
+
     const navigate = useNavigate();
     const { id } = useParams();
     const [singleRecordatorio, setSingleRecordatorio] = useState();
@@ -44,7 +48,9 @@ function UpdateRecordatorioForm() {
             asunto: asunto,
             date: fecha,
             hora: hora,
+            user_Id: currentUser.uid,
         })
+        getReminders();
         navigate('/v1/reminders')
     };
 
@@ -63,29 +69,31 @@ function UpdateRecordatorioForm() {
     }
 
   return (
-    <div>
-        <div>
-            <h2>Update Form</h2>
-        </div>
-        <div>
-            <form onSubmit={updateRecordatorio}>
-                <label>
-                    <input type='text' name='titulo' value={title} required placeholder='Nombre del recordatorio' aria-label='Nombre del recordatorio'
-                        onChange={e => setTitle(e.target.value)} />
-                </label><br />
-                <label>
-                    <input type='text' name='asunto' value={asunto} required placeholder='Asunto' aria-label='Asunto'
-                        onChange={e => setAsunto(e.target.value)} />
-                </label><br />
-                <label>
-                    <input type='date' name='date' value={fecha} min={getFechaHoy()} required aria-label='Date Picker'
-                        onChange={e => setFecha(e.target.value)} />
-                </label><br />
-                <label>
-                    <input type='time' name='time' value={hora} required aria-label='Time Picker' onChange={e => setHora(e.target.value)} />
-                </label><br />
-                <input type='submit' value='Actualizar' aria-label='Add Appointment' />
-            </form>
+    <div className='form-container'>
+        <h2>Update Form</h2>
+        <hr />
+        <div className='center-form'>
+            <div className='form-outer-div'>
+                <p>Actualiza tu recordatorio</p>
+                <form onSubmit={updateRecordatorio}>
+                    <label>
+                        <input type='text' name='titulo' value={title} required placeholder='Nombre del recordatorio' aria-label='Nombre del recordatorio'
+                            onChange={e => setTitle(e.target.value)} />
+                    </label><br />
+                    <label>
+                        <input type='text' name='asunto' value={asunto} required placeholder='Asunto' aria-label='Asunto'
+                            onChange={e => setAsunto(e.target.value)} />
+                    </label><br />
+                    <label>
+                        <input type='date' name='date' value={fecha} min={getFechaHoy()} required aria-label='Date Picker'
+                            onChange={e => setFecha(e.target.value)} />
+                    </label><br />
+                    <label>
+                        <input type='time' name='time' value={hora} required aria-label='Time Picker' onChange={e => setHora(e.target.value)} />
+                    </label><br />
+                    <input className='submit-btn' type='submit' value='Actualizar' aria-label='Add Appointment' />
+                </form>
+            </div>
         </div>
     </div>
   )
