@@ -28,6 +28,8 @@ const AppProvider = ({ children }) => {
                 recordatorios,
                 setRecordatorios,
                 getReminders,
+                currentUser,
+                setCurrentUser,
             }}>
                 {children}
         </AppContext.Provider>

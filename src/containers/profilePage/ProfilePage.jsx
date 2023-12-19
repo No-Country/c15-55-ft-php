@@ -1,20 +1,18 @@
-// ProfilePage.jsx
-
 import React, { useEffect, useState } from 'react';
 import { FaUser, FaEnvelope, FaCamera, FaEdit, FaLock, FaSignOutAlt, FaSave } from 'react-icons/fa';
 import './ProfilePage.css';
 import { useNavigate } from 'react-router-dom';
-
+import { useGlobalContext } from '../../context';
 import { getAuth, signOut } from "firebase/auth";
 
 const ProfilePage = () => {
+  const { currentUser } = useGlobalContext();
   const navigate = useNavigate();
 
   const [userData, setUserData] = useState({
     username: 'u$eR',
     email: 'usuario@example.com',
     phoneNumber: '555-1234',
-    // ... otros campos de perfil
   });
 
   const [isEditing, setIsEditing] = useState(false);
@@ -24,22 +22,12 @@ const ProfilePage = () => {
     phoneNumber: userData.phoneNumber,
   });
 
-  useEffect(() => {
-    // Lógica para cargar datos del perfil desde tu API
-    // axios.get('/api/perfil').then(response => setUserData(response.data));
-  }, []);
-
   const handleLogout = () => {
-    // Lógica para cerrar sesión, por ejemplo, redirigiendo a la página de inicio de sesión
-    // Puedes usar el enrutador (React Router) o realizar otras acciones según tus necesidades
-    // Ejemplo: history.push('/login');
     const auth = getAuth();
     signOut(auth).then(() => {
-      // Sign-out successful.
       console.log('logout successful');
       navigate('/login');
     }).catch((error) => {
-      // An error happened.
       console.log(error);
     });
   };
@@ -49,8 +37,6 @@ const ProfilePage = () => {
   };
 
   const handleSave = () => {
-    // Aquí puedes realizar la lógica para actualizar la información del perfil
-    // Puedes hacer una llamada a la API o realizar otras acciones según tus necesidades
     setUserData(editedData);
     setIsEditing(false);
   };
@@ -80,7 +66,7 @@ const ProfilePage = () => {
             <FaUser size={64} />
           </div>
           <h2>{userData.username}</h2>
-          <p>{userData.email}</p>
+          <p>{currentUser.email}</p>
         </div>
         <div className="profile-buttons">
           <button><FaCamera /> Cambiar Foto</button>
@@ -90,7 +76,7 @@ const ProfilePage = () => {
         </div>
       </div>
       <div className="center-column">
-        <h2>Bienvenido, {userData.username} a Re-Mind</h2>
+        <h2>Bienvenido a Re-Mind</h2>
         <p>Aquí podrás ver información o estadísticas relevantes acerca del uso de tus recordatorios<br></br> y cambiar la información del perfil utilizando la sección de la izquierda.</p>
         <div className="navigation-buttons">
           <button onClick={() => console.log("Ir a Recordatorios")}>

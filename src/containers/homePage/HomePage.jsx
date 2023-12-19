@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../homePage/HomePage.css';
 import data from '../../data';
+import { useGlobalContext } from '../../context';
 
 const HomePage = () => {
+  const { currentUser } = useGlobalContext();
   const navigate = useNavigate();
+  // console.log(`CurrentUserEmail: ${currentUser.email}, ${currentUser.uid}`);
+
   const [pics, setPics] = useState(data);
   const[index, setIndex] = useState(0);
-
 
   const toReminders = () => {
     navigate("/v1/reminders");
@@ -36,12 +39,11 @@ const HomePage = () => {
     };
   }, [index]);  
 
-
   return (
     <div className='homePageContainer'>
       <div className='title-car-container'>
         <div className='hPtitle'>
-          <h2>Hola <strong className='username'>User190212</strong></h2>
+          <h2>Hola <strong className='username'>{currentUser.email}</strong></h2>
           <h4 className='subtitle'>Este espacio esta disenado para ayudarte a recordar las cosas importantes de tu vida, incluso si tienes alzaheimer.</h4>
           <p className='subtitle'>Con Re-Mind podras:</p>
           <ul>
