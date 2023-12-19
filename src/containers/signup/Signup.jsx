@@ -23,6 +23,7 @@ const Signup = () => {
         email: user.email,
       });
       console.log(`User Created: ${user.uid}, ${user.email}`);
+      navigate('/login');
     } catch (error) {
       console.log(error);
     }

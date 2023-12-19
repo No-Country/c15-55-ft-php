@@ -4,8 +4,7 @@ import RecuerdoCard from '../../components/recuerdosCard/RecuerdoCard';
 import { useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
 import { IoCalendarNumberOutline } from "react-icons/io5";
-import { BsFillInboxFill } from "react-icons/bs"
-
+import { BsFillInboxFill } from "react-icons/bs";
 
 const Recordatorios = () => {
   const { recordatorios, getReminders, currentUser } = useGlobalContext();
@@ -53,6 +52,10 @@ const Recordatorios = () => {
     navigate('/v1/add');
   }
 
+  const toAll = () => {
+    navigate('/v1/remindersAll');
+  }
+
   return (
     <div className='main-recordatorios-div'>
       <h2>Recordatorios</h2>
@@ -71,7 +74,7 @@ const Recordatorios = () => {
           </div>
         </div >
         <div className='div-reminder'>
-          <div className='div-icon'>
+          <div className='div-icon' onClick={toAll}>
             <BsFillInboxFill className='icon icon-all'/>
             <p>All: {allTotal}</p>
           </div>

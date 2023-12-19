@@ -14,11 +14,10 @@ import Galeria from './containers/galeria/Galeria';
 import LandingPage from './containers/landingPage/LandingPage';
 import users from './data/users';
 import fotosdata from './data/fotosdata';
-import recordatoriosdata from './data/recordatoriosdata';
 import AddReminder from './components/reminderForm/AddReminder';
 import NotFound from './components/notFound/NotFound';
-
 import UpdateRecordatorioForm from './components/updateRecordatorioForm/UpdateRecordatorioForm';
+import RecordatoriosAll from './containers/Recordatorios/recordatoriosAll/RecordatoriosAll';
 
 function App() {
   // Ejemplo de como guardar la fakedata en un Array
@@ -34,6 +33,7 @@ function App() {
         <Route path="homePage" element={<HomePage />} />
         <Route path="reminders" element={<Recordatorios /> } />
         <Route path="reminders/:id" element={<UpdateRecordatorioForm />} />
+        <Route path="remindersAll" element={<RecordatoriosAll />} />
         <Route path="add" element={<AddReminder />} />
         <Route path="gallery" element={<Galeria /> } />    
         <Route path="profile" element={<ProfilePage /> } />
