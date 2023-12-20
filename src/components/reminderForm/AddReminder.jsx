@@ -54,26 +54,30 @@ function AddReminder() {
 
   return (
     <div className='form-Container'>
-        <div>   
-            <h3>Add Reminder</h3>
-            <form onSubmit={handleAdd}>
-                <label>
-                    <input type='text' name='titulo' value={title} required placeholder='Nombre del recordatorio' aria-label='Nombre del recordatorio'
-                        onChange={e => setTitle(e.target.value)} />
-                </label><br />
-                <label>
-                    <input type='text' name='asunto' value={asunto} required placeholder='Asunto' aria-label='Asunto'
-                        onChange={e => setAsunto(e.target.value)} />
-                </label><br />
-                <label>
-                    <input type='date' name='date' value={fecha} min={getFechaHoy()} required aria-label='Date Picker'
-                        onChange={e => setFecha(e.target.value)} />
-                </label><br />
-                <label>
-                    <input type='time' name='time' value={hora}  required aria-label='Time Picker' onChange={e => setHora(e.target.value)}/>
-                </label><br />
-                <input type='submit' value='Registrar' aria-label='Add Appointment' />
-            </form>
+        <h2>Add Reminder</h2>
+        <hr />
+        <div className='center-form'>
+            <div className='form-outer-div'>
+                <p>Nuevo Recordatorio</p>
+                <form onSubmit={handleAdd}>
+                    <label>
+                        <input type='text' name='titulo' value={title} required placeholder='Nombre del recordatorio' aria-label='Nombre del recordatorio'
+                            onChange={e => setTitle(e.target.value)} />
+                    </label><br />
+                    <label>
+                        <input type='text' name='asunto' value={asunto} required placeholder='Asunto' aria-label='Asunto'
+                            onChange={e => setAsunto(e.target.value)} />
+                    </label><br />
+                    <label>
+                        <input type='date' name='date' value={fecha} min={getFechaHoy()} required aria-label='Date Picker'
+                            onChange={e => setFecha(e.target.value)} />
+                    </label><br />
+                    <label>
+                        <input type='time' name='time' value={hora}  required aria-label='Time Picker' onChange={e => setHora(e.target.value)}/>
+                    </label><br />
+                    <input className='submit-btn' type='submit' value='Registrar' aria-label='Add Appointment' />
+                </form>
+            </div>   
         </div>
     </div>
   )
