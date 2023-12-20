@@ -35,7 +35,7 @@ const Recordatorios = () => {
       let todayDate = getFechaHoy();
       const filterToday = recordatorios.filter((y) => (y.user_Id === currentUser.uid && y.date === todayDate));
       setToday(filterToday);
-      if(filterToday. length > 0){
+      if(filterToday.length > 0){
         setTotalToday(filterToday.length);
       } else {
         setTotalToday(0);
@@ -52,6 +52,10 @@ const Recordatorios = () => {
     navigate('/v1/add');
   }
 
+  const toToday = () => {
+    navigate('/v1/remindersToday');
+  }
+
   const toAll = () => {
     navigate('/v1/remindersAll');
   }
@@ -65,7 +69,7 @@ const Recordatorios = () => {
       </div>
       <div className='section-containers-btns'>
         <div className='div-reminder'>
-          <div className='div-icon'>
+          <div className='div-icon' onClick={toToday}>
             <IoCalendarNumberOutline className='icon icon-today' />
             <p>Today: {totalToday}</p>
           </div>

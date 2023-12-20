@@ -18,6 +18,7 @@ import AddReminder from './components/reminderForm/AddReminder';
 import NotFound from './components/notFound/NotFound';
 import UpdateRecordatorioForm from './components/updateRecordatorioForm/UpdateRecordatorioForm';
 import RecordatoriosAll from './containers/Recordatorios/recordatoriosAll/RecordatoriosAll';
+import RecordatoriosToday from './containers/Recordatorios/recordatoriosToday/RecordatoriosToday';
 
 function App() {
   // Ejemplo de como guardar la fakedata en un Array
@@ -34,6 +35,7 @@ function App() {
         <Route path="reminders" element={<Recordatorios /> } />
         <Route path="reminders/:id" element={<UpdateRecordatorioForm />} />
         <Route path="remindersAll" element={<RecordatoriosAll />} />
+        <Route path="remindersToday" element={<RecordatoriosToday />} />
         <Route path="add" element={<AddReminder />} />
         <Route path="gallery" element={<Galeria /> } />    
         <Route path="profile" element={<ProfilePage /> } />
