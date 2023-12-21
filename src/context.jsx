@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import { db } from "../src/config/firestore";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
     const [recordatorios, setRecordatorios] = useState();
     const [currentUser, setCurrentUser] = useState();
+    const [users, setUsers] = useState();
+    const [userInfo, setUserInfo] = useState([]);
 
     const getReminders = async () => {
         try {
@@ -18,26 +20,48 @@ const AppProvider = ({ children }) => {
         }
     };
 
+    const getUserInfo = async () => {
+        try {
+            const querySnapshot = await getDocs(collection(db, "users"));
+            const users = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            setUsers(users);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const getSingleUser = async () => {
+        try {
+            if (currentUser?.email) {
+                const q = query(collection(db, 'users'), where("email", "==", currentUser.email));
+                const querySnapshot = await getDocs(q);
+                const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                console.log(data);
+                setUserInfo(data);
+                if (data.length > 0) {
+                    console.log(`UserInfo:`, data[0].username)
+                }
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    // console.log(`CurrentUserEmail: ${currentUser.email}, ${currentUser.uid}`);
+
     useEffect(() => {
-        getReminders();
-    }, [setRecordatorios]);
+        const fetchData = async () => {
+            await getReminders();
+            await getUserInfo();
+            await getSingleUser();
+        }
+        fetchData();
+    }, [setRecordatorios, setCurrentUser,setUserInfo]);
 
-    // // testing ---->
-    // const [myRecordatorios, SetMyRecordatorios] = useState();
-    // const [allTotal, setAllTotal] = useState([]);
-
-    // useEffect(() => {
-    //     const filteredRecords = recordatorios.filter((x) => x.user_Id === currentUser.uid);
-    //     SetMyRecordatorios(filteredRecords);
-    //     if (filteredRecords.length > 0) {
-    //         setAllTotal(filteredRecords.length);
-    //     } else {
-    //         setAllTotal(0);
-    //     }
-    // }, [recordatorios, currentUser]);
-
-
-    // // testting --->
+    useEffect(() => {
+        if (userInfo && userInfo.length > 0) {
+            console.log(`userInfooooooooooooooooooooo:`, userInfo[0].username);
+        }        
+    }, [setUserInfo]);
 
     return (
         <AppContext.Provider 
@@ -47,6 +71,11 @@ const AppProvider = ({ children }) => {
                 getReminders,
                 currentUser,
                 setCurrentUser,
+                users,
+                setUsers,
+                setUserInfo,
+                userInfo,
+                getSingleUser,
                 // myRecordatorios,
                 // allTotal,
             }}>

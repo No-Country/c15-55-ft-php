@@ -9,6 +9,7 @@ const Signup = () => {
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [username, setUsername] = useState('');
 
   const navigate = useNavigate();
 
@@ -21,6 +22,7 @@ const Signup = () => {
       await addDoc(collection(db, "users"), {
         uid: user.uid,
         email: user.email,
+        username: username,
       });
       console.log(`User Created: ${user.uid}, ${user.email}`);
       navigate('/login');
@@ -28,7 +30,7 @@ const Signup = () => {
       console.log(error);
     }
   };
-
+  console.log(username);
 
   return (
     <div className="login">
@@ -40,8 +42,8 @@ const Signup = () => {
         <p>Proporciona tus datos</p>
         <form onSubmit={handleCreate}>
           <div className="form_group">
-            <label>Tu Nombre</label>
-            <input type="text" placeholder="Rogelio Mansilla" />
+            <label>Nombre de usuario</label>
+            <input type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} />
           </div>
           <div className="form_group">
             <label htmlFor='email'>Correo electrónico</label>

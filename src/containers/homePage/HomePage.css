@@ -6,25 +6,29 @@ body {
 }
 
 .homePageContainer {
-    text-align: center;
+    /* display: flex; */
+    /* text-align: center; */
     margin: 0 auto;
+    /* border: 2px solid red; */
 }
 
 /* title-container-carrouseel */
 .title-car-container {
+    /* margin-top: 1em; */
+    /* border: 2px solid yellow; */
     display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.section-text {
+    width: 50%;
+    /* border: 1px solid blue; */
 }
 
 /* title */
 .hPtitle {
-    /* background-color: aquamarine; */
-    /* border: 1px solid black; */
-    width: 95%;
     padding-top: 5%;
-    text-align: left;
-    padding-left: 2%;
-    padding-right: 2%;
-    margin-right: 2%;
+    padding-left: 1em;
 }
 
 .hPtitle h2 {
@@ -32,11 +36,11 @@ body {
 }
 
 .username {
-    font-size: larger;
+    /* font-size: 2em; */
 }
 
 .hPtitle h4 {
-    font-size: 1rem;
+    font-size: 1em;
 }
 
 .hPtitle p {
@@ -58,7 +62,7 @@ li {
 
 .container-btn-empezar {
     display: flex;
-    margin-top: 5rem;
+    margin-top: 5em;
 }
 
 .btn-empezar {
@@ -67,10 +71,14 @@ li {
     background-color: #c423d9;
     color: white;
     text-align: center;
-    padding: 1rem;
+    /* padding: 1rem; */
     width: 40%;
     box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.7);
     cursor: pointer;
+}
+
+.btn-empezar p {
+    font-size: 1em;
 }
 
 .btn-empezar:hover {
@@ -85,18 +93,17 @@ li {
 
 /* Caroussel */
 .section-photos {
-    /* border: 1px solid black; */
-    /* border-radius: 25px; */
     margin: 0 auto;
-    margin-top: 4rem;
-    width: 90vw;
+    margin-top: 2rem;
+    width: 50%;
     height: 450px;
-    max-width: 900px;
+    max-width: 1000px;
     text-align: center;
     align-items: center;
     position: relative;
     display: flex;
     overflow: hidden;
+    /* border: 1px solid blue; */
     /* background-color: lightgray; */
 }
 
@@ -107,7 +114,7 @@ li {
     object-fit: cover;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     border-radius: 25px;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
 }
 
 .prev, .next {
@@ -194,4 +201,33 @@ article.nextSlide {
 
 .p-icon {
     font-size: 1em;
+}
+
+@media screen and (max-width: 576px) {
+    .title-car-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .section-text {
+        width: auto;
+    }
+
+    .section-photos {
+        width: 100%;
+    }
+
+    .container-btn-empezar {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-empezar {
+        text-align: center;
+    }
+
+    .img-caroussel {
+        width: 400px;
+    }
+
 }
