@@ -1,30 +1,27 @@
 # NoCountry
 
 ### Roles del Equipo
-<strong>Frontend</strong>: Alejandro Noriega, Cristian Contreras (colabora en Backend), Franco Amicone (colabora en UX/UI).<br />
-<strong>QA</strong>: Romina Manzilla.<br />
-<strong>UX/UI</strong>: Rolando Martínez.<br />
+<ul>
+    <h4>FrontEnd</h4>
+    <li>Cristian Contreras</li>
+    <li>Alejandro Noriega</li>
+    <li>Franco Amicone</li>
+    <h4>Firebase Dev</h4>
+    <li>Cristian Contreras</li>
+</ul>
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-### Notas para el equipo:
+### Pasos a seguir:
 <ol>
+    <li>Clone Repository</li>
     <li>Run: npm install</li>
     <li>Run: npm i react-router-dom</li>
+    <li>Run: npm install firebase</li>
+    <li>Crea tu firebase project, firestore database y authentication</li>
+    <li>Crea tu .env y pega las llaves que se encuentran en el .envSample</li>
     <li>Run: npm run dev</li>
 </ol>
 
-<h6>Rutas disponibles para development:</h6>
-<ul>
-    <li>login/signup</li>
-    <li>/</li>
-    <li>profile</li>
-</ul>
-
-<h6>font-family available</h6>
+<h4>font-family available</h4>
     <ul>
         <li>font-family: 'Josefin Sans', sans-serif;</li>
         <li>font-family: 'Poppins', sans-serif;</li>
