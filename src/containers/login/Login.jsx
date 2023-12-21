@@ -75,38 +75,33 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login_container">
-        <div className="column_left" />
+        <div className="column_left">
+        </div>
         <div className="column_right">
           <div className="form_container">
             <h1 className="titulo">Bienvenido de nuevo</h1>
-            <p className="parrafo">Tus recuerdos esperan</p>
-            <form onSubmit={handleLogin}>
-              <div className="form_group">
-                <label htmlFor='email'>Correo electrónico</label>
-                <input id='email' type="email" name='email' placeholder="user@email.com" value={email} 
-                  onChange={e => setEmail(e.target.value)}/>
-              </div>
-              <div className="form_group">
-                <label htmlFor='password'>Contraseña</label>
-                <input id='password' type="password" name='password' placeholder="Contraseña" value={password} 
-                  onChange={e => setPassword(e.target.value)}/>
-              </div>
-              <div className="form_group_2col">
-                <div className="form_group_checkbox">
-                  <input type="checkbox" />
-                  <label className="texto_checkbox">Recuérdame</label>
+            <p className="parrafo">Tus recuerdos te esperan...</p>
+            <form onSubmit={handleLogin}>      
+              <label htmlFor='email'>Correo electrónico</label>
+              <input id='email' type="email" name='email' placeholder="user@email.com" value={email} 
+                onChange={e => setEmail(e.target.value)}/>
+              <label htmlFor='password'>Contraseña</label>
+              <input id='password' type="password" name='password' placeholder="Contraseña" value={password} 
+                onChange={e => setPassword(e.target.value)}/>
+              <div className='section-checkbox'>
+                <div>
+                  <label for='recuerdame'>Recuérdame</label>
+                  <input type="checkbox" id='remember' name='remember' value='Recuerdame' className='input-checkbox' />
                 </div>
                 <div>
-                  <Link className="links" to='#'>
-                    ¿Olvidaste tu contraseña?
-                  </Link>
+                  <p>Olvide mi contraseña</p>
                 </div>
               </div>
-              <div className="form_group">
-                <button className="boton_enviar" type="submit">Iniciar sesión</button>
+              <div className='submit-btn-container'>
+                <button className="sbt-btn" type="submit">Iniciar sesión</button>
               </div>
             </form>
-            <div className="form_group">
+            <div className='link-bottom'>
               <p className="nuevo">
                 ¿Eres nuevo?{' '}
                 <Link className="links" to='/signup'>
