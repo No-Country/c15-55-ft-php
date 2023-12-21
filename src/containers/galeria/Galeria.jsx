@@ -7,6 +7,8 @@ import { db } from '../../config/firestore';
 import { push, set } from 'firebase/database';
 import { getStorage, listAll } from 'firebase/storage';
 import { MdAddToPhotos } from "react-icons/md";
+import { TbPhotoSquareRounded } from "react-icons/tb";
+import { CiStar } from "react-icons/ci";
 
 
 const Galeria = () => {
@@ -137,14 +139,18 @@ const Galeria = () => {
             </form>
           </div>
       )}
-        <button>Search</button>
+        {/* <button>Search</button> */}
       </div>
       <div className='photos-container'>
         <div className='photo-div'>
-          <p>Todas 📷</p>
+          {/* <div className='icon-div'> */}
+            <TbPhotoSquareRounded className='icon-div-gallery'/>
+          {/* </div> */}
+          <p>Todas</p>
         </div>
         <div className='photo-div'>
-          <p>Favoritas ⭐</p>
+          <CiStar className='icon-div-gallery' />
+          <p>Favoritas</p>
         </div>
       </div>
       <div>

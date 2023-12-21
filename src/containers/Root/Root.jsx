@@ -6,12 +6,15 @@ import Footer from '../../components/footer/Footer';
 function Root() {
   return (
     <>
+    <header>
         <Header />
-            <main>
-                <Outlet />
-            </main>
-            
-        <Footer />
+    </header>
+      <main>
+          <Outlet />
+      </main>
+    <footer>
+      <Footer />
+    </footer>
     </>
   )
 }
