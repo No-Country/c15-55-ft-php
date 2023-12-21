@@ -3,7 +3,9 @@ import './Login.css';
 import { useNavigate, Link } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
 
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { app } from '../../config/firestore';
+
+import { getAuth, signInWithEmailAndPassword,setPersistence, browserSessionPersistence } from "firebase/auth";
 
 const Login = () => {
   const { setCurrentUser, currentUser } = useGlobalContext();
@@ -11,23 +13,64 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
+  const auth = getAuth(app);
+
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
+  //   setPersistence(auth, browserSessionPersistence)
+  //   .then(() => {
+  //     return signInWithEmailAndPassword(auth, email, password);
+  //   })
+  //   .catch((error) => {
+  //     const errorCode = error.code;
+  //     const errorMessage = error.message;
+  //     console.log(errorMessage, errorCode);
+  //   })
+  //   const userCredential = signInWithEmailAndPassword(auth, email, password);
+  //   const user = userCredential.user;
+  //   setCurrentUser({
+  //     uid: user.uid,
+  //     email: user.email,
+  //   });
+  //   navigate('/v1/homePage');
+  // }
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const auth = getAuth();
     try {
+      await setPersistence(auth, browserSessionPersistence);
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      let user = userCredential.user;
+      const user = userCredential.user;
       setCurrentUser({
         uid: user.uid,
         email: user.email,
       });
-      console.log(`Login Success!, ${currentUser.uid} `);
-      navigate('/v1/homePage');
+      // console.log(`Login Success!, ${user.email}`);
+      navigate(`/v1/homePage`);
     } catch (error) {
-      console.log(error); 
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error('Login failed:', errorMessage, errorCode);
     }
-  };
+  }
+
+  // const handleLogin = async (e) => {
+  //   e.preventDefault();
+  //   setPersistence(auth, browserSessionPersistence);
+  //   try {
+  //     const userCredential = await signInWithEmailAndPassword(auth, email, password);
+  //     let user = userCredential.user;
+  //     setCurrentUser({
+  //       uid: user.uid,
+  //       email: user.email,
+  //       username: user.username,
+  //     });
+  //     console.log(`Login Success!, ${currentUser.uid} `);
+  //     navigate('/v1/homePage');
+  //   } catch (error) {
+  //     console.log(error); 
+  //   }
+  // };
 
   return (
     <div className="login">
