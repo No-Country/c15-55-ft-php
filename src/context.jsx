@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { db } from "../src/config/firestore";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import { ref, getDownloadURL } from 'firebase/storage';
+import { storage } from "../src/config/firestore";
 
 const AppContext = React.createContext();
 
@@ -9,6 +11,8 @@ const AppProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState();
     const [users, setUsers] = useState();
     const [userInfo, setUserInfo] = useState([]);
+
+    const [photos, setPhotos] = useState([]);
 
     const getReminders = async () => {
         try {
@@ -46,16 +50,41 @@ const AppProvider = ({ children }) => {
             console.log(error);
         }
     }
-    // console.log(`CurrentUserEmail: ${currentUser.email}, ${currentUser.uid}`);
+
+    // const getPhotos = async () => {
+    //     try {
+    //         if(currentUser?.uid){
+    //             const folderName = `users/${currentUser.uid}/private`;
+    //             const storageRef = ref(storage, folderName);
+    //             const listResult = await listAll(storageRef);
+
+    //             const photoItems = await Promise.all(
+    //                 listResult.items.map(async (item) => {
+    //                     const downloadURL = await getDownloadURL(item);
+    //                     return {
+    //                         name: item.name,
+    //                         url: downloadURL,
+    //                         // console.log(item.name);
+    //                         // console.log('Image URL:', downloadURL);
+    //                     };
+    //                 })
+    //             )
+    //             setPhotos(photoItems);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error listing images:', error.message);
+    //     }
+    // }
 
     useEffect(() => {
         const fetchData = async () => {
             await getReminders();
             await getUserInfo();
             await getSingleUser();
+            await getPhotos();
         }
         fetchData();
-    }, [setRecordatorios, setCurrentUser,setUserInfo]);
+    }, [setRecordatorios, setCurrentUser,setUserInfo, setPhotos]);
 
     useEffect(() => {
         if (userInfo && userInfo.length > 0) {
@@ -76,6 +105,8 @@ const AppProvider = ({ children }) => {
                 setUserInfo,
                 userInfo,
                 getSingleUser,
+                photos,
+                setPhotos,
                 // myRecordatorios,
                 // allTotal,
             }}>
