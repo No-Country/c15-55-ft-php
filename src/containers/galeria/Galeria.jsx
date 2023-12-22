@@ -79,6 +79,7 @@ const Galeria = () => {
         setName('');
         setPhoto(null);
       console.log(`Data successfully submitted to Firebase.`);
+      alert('Nueva Memoria added');
     } catch (error) {
       console.error(`Error submitting data to Firebase: ${error.message}`);
     }

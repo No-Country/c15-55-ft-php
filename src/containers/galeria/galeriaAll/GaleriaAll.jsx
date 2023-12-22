@@ -5,7 +5,7 @@ import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../../config/firestore';
 
 function GaleriaAll() {
-    const { photos, setPhotos, currentUser } = useGlobalContext();
+    const { photos, setPhotos, currentUser, getPhotos } = useGlobalContext();
     // console.log(photos.length);
     let [keyId, setKeyId] = useState(1);
     const [bigView, setBigView] = useState(false);
@@ -31,6 +31,7 @@ function GaleriaAll() {
                 imageUrl: url,
                 user_id: uid,
             });
+            getPhotos();
         } catch (error) {
             console.log(`Error al adding favorites:`, error);
         }
