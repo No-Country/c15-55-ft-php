@@ -27,7 +27,7 @@ body {
 
 /* title */
 .hPtitle {
-    padding-top: 5%;
+    padding-top: 4em;
     padding-left: 1em;
 }
 
@@ -228,6 +228,15 @@ article.nextSlide {
 
     .img-caroussel {
         width: 400px;
+    }
+
+    .hPtitle h4 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .hPtitle p {
+        text-align: center;
     }
 
 }

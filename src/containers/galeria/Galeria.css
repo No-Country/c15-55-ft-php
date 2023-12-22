@@ -39,10 +39,12 @@
 }
 
 .photos-container {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
+    justify-content: space-around;
     gap: 2em;
     margin-left: 1em;
+    margin-top: 4em;
 }
 
 .photo-div {
@@ -51,11 +53,24 @@
     width: 300px;
     border-radius: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-div {
+
 }
 
 .photo-div p {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;
+}
+
+.icon-div-gallery {
+    font-size: 4em;
 }
     /* form add popup */
 .popup-container {
