@@ -120,6 +120,7 @@ const AppProvider = ({ children }) => {
                 setPhotos,
                 setFavPics,
                 favPics,
+                getPhotos,
                 // myRecordatorios,
                 // allTotal,
             }}>
