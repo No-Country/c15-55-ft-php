@@ -6,27 +6,239 @@
   --violeta-claro: #CE2CE4;
 }
 
-html,
+.Landing-Container {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.header-container {
+  display: flex;
+  width: 100%;
+  /* border: 3px solid yellow; */
+}
+
+.container-logo {
+  width: 50%;
+}
+
+.container-logo h2 {
+  margin-left: 1em;
+}
+
+.container-login {
+  width: 50%;
+  margin-right: 1em;
+  display: flex;
+  justify-content: end;
+  text-align: center;
+}
+
+.login-btn {
+  width: 30%;
+  font-size: 1em;
+  /* display: flex; */
+}
+
+.login-btn p:hover {
+  background-color: #CE2CE4;
+  border: 2px solid #CE2CE4;
+}
+
+.login-btn p {
+  background-color: #CE2CE4;
+  border: 1px solid #CE2CE4;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 1.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* HERO */
+.hero {
+  height: 500px;
+  background-image: url('../../assets/imagen-hero.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+}
+
+.left-space-hero {
+  width: 50%;
+}
+
+.right-space-hero {
+  width: 50%;
+  margin-top: 4em;
+  color: #580359;
+}
+
+.right-space-hero p {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.btn-create {
+  border: 1px solid #CE2CE4;
+  background-color: #CE2CE4;
+  width: 50%;
+  border-radius: 8px;
+  padding: .5em;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-create:hover {
+  font-size: 1.1em;
+}
+
+/* Introduccion */
+.introduction-container {
+  height: 700px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-subtitle {
+  width: 100%;
+  color: #580359;
+  text-align: center;
+}
+
+.intro-subtitle p {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.intro-subtitle hr {
+  width: 15%;
+  height: 5px;
+  border: none;
+  background-color: #CE2CE4;
+  border-radius: 8px;
+}
+
+.intro-image {
+  display: flex;
+}
+
+.div-intro-img {
+  height: 350px;
+  width: 700px;
+  /* border: 1px solid black; */
+  border-radius: 8px;
+  margin: 1em auto;
+  background-image: url('../../assets/hiking.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.buttons-container {
+  display: flex;
+  /* border: 1px solid #580359; */
+  justify-content: space-evenly;
+  /* justify-content: center; */
+}
+
+.icon-btn {
+  height: 90px;
+  width: 100px;
+  /* border: 1px solid #580359; */
+  border-radius: 50%;
+  background-color: #bc58ca;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* text-align: center; */
+}
+
+.icon-btn p {
+  text-align: center;
+}
+
+.icon-lp {
+  margin-top: .2em;
+  color: #580359;
+  font-size: 2.5em;
+}
+
+.buttons-subtitles {
+  height: 90px;
+  width: 100%;
+  color: #580359;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+/* footer  */
+.footer-container {
+  display: flex;
+}
+
+.footer-logo {
+  width: 100%;
+  justify-content: center;
+  text-align: left;
+  margin-left: 1em;
+  margin-top: 1em;
+}
+
+.logo {
+  font-size: 2em;
+}
+
+.footer-info {
+  width: 100%;
+  justify-content: right;
+  text-align: right;
+  margin-right: 1em;
+}
+
+@media screen and (max-width: 578px) {
+  .left-space-hero {
+    display: none;
+  }
+
+  .right-space-hero {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-create {
+    margin: auto;
+  }
+}
+
+/* html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   font-family: 'Poppins', sans-serif;
-}
+} */
 .bg-violeta {
   background-color: var(--violeta);
 }
 h1 {
-  margin:0;
-  padding:0;
-  color: var(--violeta);
-  font-size: 50px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-align: center;
+  /* margin:0; */
+  /* padding:0; */
+  /* color: var(--violeta); */
+  /* font-size: 50px; */
+  /* font-style: normal; */
+  /* font-weight: 700; */
+  /* line-height: normal; */
+  /* text-align: center; */
 }
-h2 {
+/* h2 {
   margin:0;
   padding:0;
   color: #000;
@@ -35,8 +247,8 @@ h2 {
   font-weight: 700;
   line-height: normal;
   text-align: center;
-}
-h3 {
+} */
+/* h3 {
   margin:0;
   padding:0;
   color: #000;
@@ -45,12 +257,12 @@ h3 {
   font-weight: 700;
   line-height: normal;
   text-align: center;
-}
-.imagen-fondo {
+} */
+/* .imagen-fondo {
   background-image: url('/src/assets/imagen-hero.jpeg');
   
-}
-.subtitulo {
+} */
+/* .subtitulo {
   margin:0;
   padding:0;
   color: var(--violeta);
@@ -59,20 +271,20 @@ h3 {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-}
-.contenedor {
+} */
+/* .contenedor {
   padding: 25px;
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-.contenedor-row {
+} */
+/* .contenedor-row {
     padding: 25px;
     display: flex;
     align-items: center;
     flex-direction:row;
-  }
-  .boton {
+  } */
+  /* .boton {
     background-color:var(--violeta-claro);
     border-radius: 10px;
     color:var(--blanco);
@@ -80,9 +292,9 @@ h3 {
     font-weight: 700;
     font-size: 17px;
     text-decoration: none;
-  }
-  .parrafo-small {
+  } */
+  /* .parrafo-small {
     font-size: 20px;
     color:var(--violeta);
     font-weight: 400;
-  }
+  } */
