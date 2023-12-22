@@ -13,6 +13,7 @@ const AppProvider = ({ children }) => {
     const [userInfo, setUserInfo] = useState([]);
 
     const [photos, setPhotos] = useState([]);
+    const [favPics, setFavPics] = useState([]);
 
     const getReminders = async () => {
         try {
@@ -23,6 +24,16 @@ const AppProvider = ({ children }) => {
             console.log(error);
         }
     };
+
+    const getPhotos = async () => {
+        try {
+            const querySnapshot = await getDocs(collection(db, 'memories'));
+            const allPhotos = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            setFavPics(allPhotos);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     const getUserInfo = async () => {
         try {
@@ -107,6 +118,8 @@ const AppProvider = ({ children }) => {
                 getSingleUser,
                 photos,
                 setPhotos,
+                setFavPics,
+                favPics,
                 // myRecordatorios,
                 // allTotal,
             }}>

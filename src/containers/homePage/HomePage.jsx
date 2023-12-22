@@ -9,12 +9,13 @@ import { db } from '../../config/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 const HomePage = () => {
-  const { currentUser, users, setUsers, userInfo, setUserInfo, setCurrentUser, getSingleUser } = useGlobalContext();
+  const { currentUser, users, setUsers, userInfo, setUserInfo, setCurrentUser, getSingleUser, reminders } = useGlobalContext();
   const navigate = useNavigate();
   console.log(users);
   if(userInfo.length > 0) {
     console.log(`userInfooooooooooooooooooooo:`, userInfo[0].username);
   }
+  console.log(reminders)
   
   
   useEffect(() => {
@@ -101,7 +102,7 @@ const HomePage = () => {
                 return (
                   <article key={id} className={position}>
                     <img src={image} alt={title} className='img-caroussel'/>
-                    <h2>{name}</h2>
+                    {/* <h2>{name}</h2> */}
                   </article>
                 )
               })

@@ -9,6 +9,7 @@ import { getStorage, listAll } from 'firebase/storage';
 import { MdAddToPhotos } from "react-icons/md";
 import { TbPhotoSquareRounded } from "react-icons/tb";
 import { CiStar } from "react-icons/ci";
+import { useNavigate } from 'react-router-dom';
 
 
 const Galeria = () => {
@@ -19,8 +20,17 @@ const Galeria = () => {
   const [name, setName] = useState('');
   const [photo, setPhoto] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
+  const navigate = useNavigate();
 
   const [percentage, setPercentage] = useState();
+
+  const toAll = () => {
+    navigate('/v1/galleryAll');
+  }
+
+  const toFavs = () => {
+    navigate('/v1/galleryFavs');
+  }
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -142,13 +152,13 @@ const Galeria = () => {
         {/* <button>Search</button> */}
       </div>
       <div className='photos-container'>
-        <div className='photo-div'>
+        <div className='photo-div' onClick={toAll}>
           {/* <div className='icon-div'> */}
             <TbPhotoSquareRounded className='icon-div-gallery'/>
           {/* </div> */}
           <p>Todas</p>
         </div>
-        <div className='photo-div'>
+        <div className='photo-div' onClick={toFavs}>
           <CiStar className='icon-div-gallery' />
           <p>Favoritas</p>
         </div>
