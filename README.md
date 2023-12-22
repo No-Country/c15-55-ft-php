@@ -7,6 +7,8 @@
     <li>Franco Amicone</li>
     <h4>Firebase Dev</h4>
     <li>Cristian Contreras</li>
+     <h4>QA Tester</h4>
+    <li>Romina Manzilla</li>
 </ul>
 
 ### Pasos a seguir:
