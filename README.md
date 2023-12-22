@@ -4,7 +4,6 @@
 <ul>
     <h4>FrontEnd</h4>
     <li>Cristian Contreras</li>
-    <li>Alejandro Noriega</li>
     <li>Franco Amicone</li>
     <h4>Firebase Dev</h4>
     <li>Cristian Contreras</li>
