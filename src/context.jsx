@@ -62,31 +62,6 @@ const AppProvider = ({ children }) => {
         }
     }
 
-    // const getPhotos = async () => {
-    //     try {
-    //         if(currentUser?.uid){
-    //             const folderName = `users/${currentUser.uid}/private`;
-    //             const storageRef = ref(storage, folderName);
-    //             const listResult = await listAll(storageRef);
-
-    //             const photoItems = await Promise.all(
-    //                 listResult.items.map(async (item) => {
-    //                     const downloadURL = await getDownloadURL(item);
-    //                     return {
-    //                         name: item.name,
-    //                         url: downloadURL,
-    //                         // console.log(item.name);
-    //                         // console.log('Image URL:', downloadURL);
-    //                     };
-    //                 })
-    //             )
-    //             setPhotos(photoItems);
-    //         }
-    //     } catch (error) {
-    //         console.error('Error listing images:', error.message);
-    //     }
-    // }
-
     useEffect(() => {
         const fetchData = async () => {
             await getReminders();
@@ -121,8 +96,6 @@ const AppProvider = ({ children }) => {
                 setFavPics,
                 favPics,
                 getPhotos,
-                // myRecordatorios,
-                // allTotal,
             }}>
                 {children}
         </AppContext.Provider>

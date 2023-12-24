@@ -1,11 +1,13 @@
 import React from 'react';
 import '../header/Header.css';
 import { NavLink } from 'react-router-dom';
+import { GiBrain } from "react-icons/gi";
 
 function Header() {
   return (
     <div className='Header'>
       <div className='leftLink'>
+        <GiBrain  className='brain-logo'/>
         <NavLink to="/v1/homePage" className='linkStyle'>Re-Mind</NavLink>
       </div>
       <div className='rightLinks'>

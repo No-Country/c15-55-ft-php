@@ -1,0 +1,13 @@
+.not-available-container {
+    display: flex;
+    height: 40vh;
+    /* border: 1px solid red; */
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.not-available-container h2 {
+    padding-top: 2em;
+    text-decoration: underline;
+}

@@ -40,7 +40,6 @@ const Galeria = () => {
     const file = e.target.files[0];
     setPhoto(file);
   }
-  // console.log(`Storage: `, storage);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

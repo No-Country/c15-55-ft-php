@@ -87,20 +87,6 @@ const Recordatorios = () => {
           </div>
           </div>
       </div>
-      {/* <div>
-        {
-          myRecordatorios ? (
-            myRecordatorios.map((recordatorio) => {
-              return (
-                <RecuerdoCard key={recordatorio.id} recordatorio={recordatorio} />
-              )
-            })
-          ) : 
-            <div>
-              <h2>No Reminders At This Moment</h2>
-            </div>
-        }
-      </div> */}
     </div>
   )
 }

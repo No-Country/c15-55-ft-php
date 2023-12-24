@@ -1,7 +1,4 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import HomePage from './containers/homePage/HomePage';
 import Login from './containers/login/Login';
@@ -9,7 +6,6 @@ import Signup from './containers/signup/Signup';
 import ProfilePage from './containers/profilePage/ProfilePage';
 import Recordatorios from './containers/Recordatorios/Recordatorios';
 import Root from './containers/Root/Root';
-import Header from './components/header/Header';
 import Galeria from './containers/galeria/Galeria';
 import LandingPage from './containers/landingPage/LandingPage';
 import users from './data/users';

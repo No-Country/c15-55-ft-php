@@ -22,7 +22,6 @@ function RecordatoriosAll() {
                 myRecordatorios.length > 0 ?
                 myRecordatorios.map((recordatorio) => {
                     return (
-                        // <h2>{recordatorio.title}</h2>
                         <RecuerdoCard key={recordatorio.id} recordatorio={recordatorio}/>
                     )
                 }) : (

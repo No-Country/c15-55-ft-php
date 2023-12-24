@@ -9,7 +9,8 @@ main {
 }
 
 .main-recordatorios-div h2 {
-    padding: .5em;
+    margin: 0;
+    padding-top: .4em;
 }
 
 .btn-add-container {
