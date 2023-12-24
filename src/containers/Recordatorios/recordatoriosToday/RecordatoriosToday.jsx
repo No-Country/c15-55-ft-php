@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { useGlobalContext } from '../../../context';
 import RecuerdoCard from '../../../components/recuerdosCard/RecuerdoCard';
+import '../recordatoriosToday/RecordatoriosToday.css';
 
 function RecordatoriosToday() {
     const { currentUser, recordatorios, setRecordatorios } = useGlobalContext();
@@ -28,13 +29,15 @@ function RecordatoriosToday() {
         <hr />
         <div className='cards-container'>
             {
-                todayRecordatorios ? 
+                todayRecordatorios.length > 0 ? 
                     todayRecordatorios.map((recordatorio) => {
                         return (
                             <RecuerdoCard key={recordatorio.id} recordatorio={recordatorio} />
                         )
                     }) : (
-                        <h2>Not Available</h2>
+                        <div className='not-available-container'>
+                            <h2>No Recordatorios disponibles para este dia!</h2>
+                        </div>
                     )
             }
         </div>

@@ -12,11 +12,18 @@
     display: flex;
 }
 
-.rightLinks {
+.rightLink {
     /* border: 1px solid red; */
     width: 60%;
     text-align: end;
     margin-right: 1rem;
+    margin-left: 2em;
+}
+
+.brain-logo {
+    color: white;
+    font-size: 2em;
+    margin-left: .5em;
 }
 
 .linkStyle {
@@ -24,7 +31,7 @@
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.2rem;
-    margin-left: 1em;
+    margin-left: .5em;
 }
 
 .linkStyle-active {
