@@ -6,7 +6,6 @@ import { db } from '../../../config/firestore';
 
 function GaleriaAll() {
     const { photos, setPhotos, currentUser, getPhotos } = useGlobalContext();
-    let [keyId, setKeyId] = useState(1);
     const [bigView, setBigView] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState(null);
     const [selectedName, setSelectedName] = useState('');

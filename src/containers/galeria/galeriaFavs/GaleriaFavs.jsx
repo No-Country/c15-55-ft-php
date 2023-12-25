@@ -3,7 +3,6 @@ import { useGlobalContext } from '../../../context';
 
 function GaleriaFavs() {
     const { favPics, setPhotos, currentUser } = useGlobalContext();
-    // console.log(photos.length);
     let [keyId, setKeyId] = useState(1);
     const [bigView, setBigView] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState(null);
@@ -14,7 +13,6 @@ function GaleriaFavs() {
 
     const bigPic = (url, name) => {
         setSelectedPhoto(url);
-        // setSelectedName(name);
         setBigView(true);
     }
 
@@ -46,7 +44,6 @@ function GaleriaFavs() {
                 bigView && (
                     <div className='popup'>
                         <div className='popup-content'>
-                            {/* <span className='favorite' onClick={() => createFavorite(selectedName, selectedPhoto, currentUser.uid)}>⭐</span> */}
                             <span className='close' onClick={cancel}>❌</span>
                             <img src={selectedPhoto} alt='Big View' />
                         </div>
