@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { db } from "../src/config/firestore";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { ref, getDownloadURL } from 'firebase/storage';
-import { storage } from "../src/config/firestore";
 
 const AppContext = React.createContext();
 

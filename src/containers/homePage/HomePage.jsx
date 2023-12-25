@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import '../homePage/HomePage.css';
 import data from '../../data';
 import { useGlobalContext } from '../../context';
-import { collection, query, where, getDocs } from "firebase/firestore";
-import { db } from '../../config/firestore';
 
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
@@ -26,14 +24,6 @@ const HomePage = () => {
     getSingleUser();
     return () => unsubscribe();
   }, []);
-  // }, [setCurrentUser, currentUser]);
-
-  // useEffect(() => {
-  //   const info = users.filter((user) => user.email === currentUser.email);
-  //   setUserInfo(info);
-  // }, [setUsers]);
-  // console.log(userInfo.username);
-
 
   const [pics, setPics] = useState(data);
   const[index, setIndex] = useState(0);
@@ -111,17 +101,6 @@ const HomePage = () => {
             {/* <button className='next' onClick={() => setIndex(index + 1)}>➡️</button> */}
           </div>
       </div>
-      {/* <div className='tools'>
-        <h2 className='tools-h2'>Mis Herramientas</h2>
-        <div className='container-secciones'>
-          <div className='calendario-btn' onClick={toReminders}>
-            <p className='p-icon'>Recordatorios</p>
-          </div>
-          <div className='audio-btn' onClick={toGallery}>
-            <p className='p-icon'>Galeria</p>
-          </div>
-        </div>
-      </div> */}
     </div>
   )
 }

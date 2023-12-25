@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import "../Recordatorios/Recordatorios.css";
-import RecuerdoCard from '../../components/recuerdosCard/RecuerdoCard';
 import { useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
 import { IoCalendarNumberOutline } from "react-icons/io5";

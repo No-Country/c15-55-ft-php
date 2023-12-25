@@ -149,13 +149,10 @@ const Galeria = () => {
             </form>
           </div>
       )}
-        {/* <button>Search</button> */}
       </div>
       <div className='photos-container'>
         <div className='photo-div' onClick={toAll}>
-          {/* <div className='icon-div'> */}
             <TbPhotoSquareRounded className='icon-div-gallery'/>
-          {/* </div> */}
           <p>Todas</p>
         </div>
         <div className='photo-div' onClick={toFavs}>
@@ -164,7 +161,6 @@ const Galeria = () => {
         </div>
       </div>
       <div>
-
       </div>
     </div>
   )
