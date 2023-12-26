@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useGlobalContext } from '../../../context';
 import '../galeriaAll/GaleriaAll.css';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../../config/firestore';
+import { getStorage, ref, deleteObject } from "firebase/storage";
+import { storage } from '../../../config/firestore';
 
 function GaleriaAll() {
-    const { photos, setPhotos, currentUser, getPhotos } = useGlobalContext();
+    const { photos, setPhotos, currentUser, getPhotos, setFavPics } = useGlobalContext();
+    console.log(photos);
     const [bigView, setBigView] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState(null);
     const [selectedName, setSelectedName] = useState('');
@@ -36,6 +39,22 @@ function GaleriaAll() {
         alert('Added to favorites list');
     }
 
+    const handleDelete = async (imageName) => {
+        try {
+            const folderName = `users/${currentUser.uid}/private`;
+            const storageRef = ref(storage, `${folderName}/${imageName}`);
+            await deleteObject(storageRef);
+            console.log(`Image ${imageName} deleted from storage`);
+            const updatedList = photos.filter((photo) => photo.name !== imageName);
+            setPhotos(updatedList);
+            alert(`${imageName} ha sido eliminada!`);
+            setBigView(false);
+            console.log(`Image ${imageName} deleted from storage and corresponding Firestore document deleted`);
+        } catch (error) {
+            console.error(`Error deleting image: ${error.message}`);
+        }
+    };
+
 
   return (
     <div className='photoAll-main'>
@@ -62,6 +81,7 @@ function GaleriaAll() {
                           <span className='favorite' onClick={() => createFavorite(selectedName, selectedPhoto, currentUser.uid)}>⭐</span>
                           <span className='close' onClick={cancel}>❌</span>
                           <img src={selectedPhoto} alt='Big View' />
+                          <p style={{ backgroundColor: 'white' }} onClick={() => { handleDelete(selectedName) }}>Eliminar: 🗑️</p>
                       </div>
                   </div> 
             )

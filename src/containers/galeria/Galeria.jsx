@@ -71,7 +71,7 @@ const Galeria = () => {
             user_id: currentUser.uid,
             name,
             imageUrl: downloadURL,
-            id: newMemoryRef,
+            id: newMemoryRef.id,
           });
           setImageUrl(downloadURL);
         })
