@@ -51,7 +51,7 @@ const Login = () => {
                 onChange={e => setPassword(e.target.value)}/>
               <div className='section-checkbox'>
                 <div>
-                  <label for='recuerdame'>Recuérdame</label>
+                  <label htmlFor='recuerdame'>Recuérdame</label>
                   <input type="checkbox" id='remember' name='remember' value='Recuerdame' className='input-checkbox' />
                 </div>
                 <div>
