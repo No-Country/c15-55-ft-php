@@ -6,11 +6,13 @@ import { PiMagnifyingGlassBold } from "react-icons/pi";
 import { MdGroups2 } from "react-icons/md";
 import { GiBrain } from "react-icons/gi";
 
+
 function LandingPage() {
   return (
         <div className='Landing-Container'>
             <div className="header-container bg-violeta">
               <div className='container-logo'>
+              <img src='src/assets/brain.png' className='brainLogo' />
                 <h2>Re-Mind</h2>
               </div>
               <div className='container-login'>

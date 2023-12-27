@@ -7,7 +7,7 @@ import { getStorage, ref, deleteObject } from "firebase/storage";
 import { storage } from '../../../config/firestore';
 
 function GaleriaAll() {
-    const { photos, setPhotos, currentUser, getPhotos, setFavPics } = useGlobalContext();
+    const { photos, setPhotos, currentUser } = useGlobalContext();
     console.log(photos);
     const [bigView, setBigView] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState(null);
@@ -47,8 +47,8 @@ function GaleriaAll() {
             console.log(`Image ${imageName} deleted from storage`);
             const updatedList = photos.filter((photo) => photo.name !== imageName);
             setPhotos(updatedList);
-            alert(`${imageName} ha sido eliminada!`);
             setBigView(false);
+            alert(`${imageName} ha sido eliminada!`);
             console.log(`Image ${imageName} deleted from storage and corresponding Firestore document deleted`);
         } catch (error) {
             console.error(`Error deleting image: ${error.message}`);
