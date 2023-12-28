@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import '../login/Login.css';
+// import '../login/Login.css';
+import '../signup/Signup.css';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../config/firestore";
@@ -38,32 +39,36 @@ const Signup = () => {
         <div className="column_left">
         </div>
         <div className="column_right">
+          <div className='title-div'>
+            <h1>Re-Mind</h1>
+          </div>
           <div className="form_container">
-            <h1 className='titulo'>Crea una cuenta</h1>
+            <h2>Crea una cuenta</h2>
             <p className='parrafo'>Proporciona tus datos</p>
             <form onSubmit={handleCreate}>
-              <label>Nombre de usuario</label>
+              <label>Nombre de usuario
               <input type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} />
-              <label htmlFor='email'>Correo electrónico</label>
+              </label>
+              <label htmlFor='email'>Correo electrónico
               <input id='email' type="email" name='email' placeholder="email@gmail.com"  value={email}
                 onChange={e => setEmail(e.target.value)} required/>
-              <label htmlFor='password'>Contraseña</label>
+              </label>
+              <label htmlFor='password'>Contraseña
               <input id='password' type="password" name='password' placeholder="Tdfg%63S" value={password} 
                 onChange={e => setPassword(e.target.value)} required/>
-                <div className='section-checkbox'>
-                  <div className='section-checkbox-create'>
-                    <label for='terminos'>Acepto los terminos y condiciones</label>
-                    <input type='checkbox' id='terminos' name='terminos' value='terminos'></input>
-                  </div>
-                </div>
-                <div className='submit-btn-container'>
-                  <button className='sbt-btn' type="submit">Crear Cuenta</button>
-                </div>
-              
-             
-           
+              </label>
+              <div className='section-checkbox'>
+                {/* <div className='section-checkbox-label-box'>
+                  <label htmlFor='terminos'>Acepto los terminos y condiciones
+                  <input type='checkbox' id='terminos' name='terminos' value='terminos'></input>
+                  </label>
+                </div> */}
+              </div>
+              <div className='submit-btn-container'>
+                <button className='sbt-btn' type="submit">Crear Cuenta</button>
+              </div>
             </form>
-            <div className="form_group">
+            <div className="link-bottom">
               <p className="nuevo">
                 ¿Ya Eres usuario?{" "}
                 <Link className="links" to='/login'>
