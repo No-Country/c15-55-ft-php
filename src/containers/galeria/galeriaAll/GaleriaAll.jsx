@@ -63,20 +63,21 @@ function GaleriaAll() {
         <div className='cards-container2'>
             {
                 photos.length > 0 ?
-                    photos.map((photo) => {
-                        return (
-                            <div key={photo.name} className='photo-card' onClick={() => bigPic(photo.url, photo.name)}>
+                photos.map((photo) => {
+                    return (
+                        <div key={photo.name} className='photo-card' onClick={() => bigPic(photo.url, photo.name)}>
+                                <p>{photo.name}</p>
                                 <img src={photo.url} alt={photo.name} />
                             </div>
                         )
                     }) : (
                         <div>No fotos disponibles</div>
-                    )
-            }
+                        )
+                    }
         </div>
         {
             bigView && (
-                  <div className='popup'>
+                <div className='popup'>
                       <div className='popup-content'>
                           <span className='favorite' onClick={() => createFavorite(selectedName, selectedPhoto, currentUser.uid)}>⭐</span>
                           <span className='close' onClick={cancel}>❌</span>
