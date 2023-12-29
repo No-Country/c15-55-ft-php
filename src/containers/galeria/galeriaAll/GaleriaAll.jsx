@@ -82,7 +82,7 @@ function GaleriaAll() {
                           <span className='favorite' onClick={() => createFavorite(selectedName, selectedPhoto, currentUser.uid)}>⭐</span>
                           <span className='close' onClick={cancel}>❌</span>
                           <img src={selectedPhoto} alt='Big View' />
-                          <p style={{ backgroundColor: 'white' }} onClick={() => { handleDelete(selectedName) }}>Eliminar: 🗑️</p>
+                          <p style={{ backgroundColor: 'white', cursor: 'pointer' }} onClick={() => { handleDelete(selectedName) }}>Eliminar: 🗑️</p>
                       </div>
                   </div> 
             )
