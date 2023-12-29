@@ -134,7 +134,7 @@ const Galeria = () => {
             <h4>Nueva Memoria</h4>
             <form className='photo-form' onSubmit={handleSubmit}>
               <label>Nombre:</label>
-              <input type='text' value={name} onChange={handleNameChange}></input>
+              <input type='text' value={name} onChange={handleNameChange} maxLength="15"></input>
               <br />
               <label>Photo:</label>
               <input type='file' accept='image/*' onChange={handlePhotoChange} ></input>
