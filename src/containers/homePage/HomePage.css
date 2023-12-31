@@ -10,6 +10,8 @@ body {
     /* display: flex; */
     /* text-align: center; */
     margin: 0 auto;
+    margin-bottom: auto;
+    padding-top: 1rem;
     /* border: 2px solid red; */
 }
 
@@ -28,42 +30,50 @@ body {
 
 /* title */
 .hPtitle {
-    padding-top: 4em;
-    padding-left: 1em;
+    /* padding-top: 4em;
+    padding-left: 1em; */
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 2rem 5rem;
 }
 
 .hPtitle h2 {
-    font-size: 2em;
+    font-size: 2.5em;
+    margin-bottom: 1rem;
 }
 
 .username {
     /* font-size: 2em; */
 }
 
-.hPtitle h4 {
-    font-size: 1em;
+.subheading {
+    font-size: 2rem;
+    font-family: 'Roboto-Flex', sans-serif;
 }
 
-.hPtitle p {
+/* .hPtitle p {
     font-size: 1.5rem;
-}
+} */
 
 .subtitle {
-    color: #c423d9;
+    color: #a52bb6;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 ul {
-    color: #580359;
+    color: #c423d9;
 }
 
 li {
     list-style: disc;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .container-btn-empezar {
     display: flex;
-    margin-top: 5em;
+    margin-top: 2.5em;
 }
 
 .btn-empezar {
@@ -94,18 +104,24 @@ li {
 
 /* Caroussel */
 .section-photos {
-    margin: 0 auto;
-    margin-top: 2rem;
+    /* margin: 0 auto; */
+    /* margin-top: 2rem; */
+    /* border: 1px solid green; */
     width: 50%;
-    height: 450px;
+    height: 650px;
     max-width: 1000px;
-    text-align: center;
-    align-items: center;
+    /* text-align: center; */
+    /* align-items: center; */
     position: relative;
-    display: flex;
+    /* display: flex; */
     overflow: hidden;
-    /* border: 1px solid blue; */
-    /* background-color: lightgray; */
+    /* / background image style / */
+    background-image: url('../../assets/bgHomePage2Edit.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    max-width: 800px;
 }
 
 .img-caroussel {
@@ -115,7 +131,7 @@ li {
     object-fit: cover;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     border-radius: 25px;
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
 }
 
 .prev, .next {
@@ -202,6 +218,27 @@ article.nextSlide {
 
 .p-icon {
     font-size: 1em;
+}
+
+@media screen and (max-width: 768px) {
+    .section-text {
+        width: 90%;
+        text-align: center;
+    }
+
+    .hPtitle {
+        width: 100%;
+        justify-content: center;
+        padding: 2rem 2rem;
+    }
+
+    .section-photos {
+        display: none;
+    }
+
+    .container-btn-empezar {
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width: 576px) {
