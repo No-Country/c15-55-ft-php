@@ -125,7 +125,7 @@ const Galeria = () => {
   return (
     <div className='galeria-container'>
       <div className='memorias-container'>
-        <h2>Memorias</h2>
+        <p className='titulo-galeria'>MEMORIAS</p>
         <div className='add-photo' onClick={() => {addForm()}}>Add a memory</div>
       </div>
       <div>
@@ -150,16 +150,39 @@ const Galeria = () => {
           </div>
       )}
       </div>
-      <div className='photos-container'>
-        <div className='photo-div' onClick={toAll}>
-            <TbPhotoSquareRounded className='icon-div-gallery'/>
-          <p>Todas</p>
+      <section className='margin-container'>
+        <div className='photos-container'>
+          <section className='left-media-container'>
+            <div className='left-bg-image'>
+              <div className='bg-img-effect'>
+              </div>
+            </div>
+          </section>
+          <section className='right-text-container'>
+            <div className='right-secondary-div'>
+              <div className='right-children-div-one'>Revive tus recuerdos, la magia unica que vive en ellos</div>
+              <div className='right-children-div-two'>
+                <div className='btn-acceder' onClick={toAll}>Acceder ↗️</div>
+              </div>
+            </div>
+            <div className='right-secondary-div'>
+              <div className='right-children-div-one middle'>Aquellos recuerdos inolvidables</div>
+              <div className='right-children-div-two'>
+                <div className='btn-acceder' onClick={toFavs}>Acceder ↗️</div>
+              </div>
+            </div>
+          </section>
+          {/* <div className='photo-div' onClick={toAll}>
+              <TbPhotoSquareRounded className='icon-div-gallery'/>
+            <p>Todas</p>
+          </div>
+          <div className='photo-div' onClick={toFavs}>
+            <CiStar className='icon-div-gallery' />
+            <p>Favoritas</p>
+          </div> */}
         </div>
-        <div className='photo-div' onClick={toFavs}>
-          <CiStar className='icon-div-gallery' />
-          <p>Favoritas</p>
-        </div>
-      </div>
+
+      </section>
       <div>
       </div>
     </div>
