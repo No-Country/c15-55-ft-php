@@ -59,9 +59,9 @@ function AddReminder() {
         <div className='center-form'>
             <div className='form-outer-div'>
                 <p>Nuevo Recordatorio</p>
-                <form onSubmit={handleAdd}>
+                <form className='add-reminder-form' onSubmit={handleAdd}>
                     <label>
-                        <input type='text' name='titulo' value={title} required placeholder='Nombre del recordatorio' aria-label='Nombre del recordatorio'
+                        <input type='text' name='titulo' value={title} required placeholder='Titulo' aria-label='Nombre del recordatorio'
                             onChange={e => setTitle(e.target.value)} />
                     </label><br />
                     <label>
@@ -75,7 +75,7 @@ function AddReminder() {
                     <label>
                         <input type='time' name='time' value={hora}  required aria-label='Time Picker' onChange={e => setHora(e.target.value)}/>
                     </label><br />
-                    <input className='submit-btn' type='submit' value='Registrar' aria-label='Add Appointment' />
+                    <input className='submit-btn-add' type='submit' value='Registrar' aria-label='Add Appointment' />
                 </form>
             </div>   
         </div>
