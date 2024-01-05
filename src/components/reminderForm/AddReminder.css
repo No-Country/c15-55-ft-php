@@ -9,7 +9,7 @@
 .center-form {
     display: flex;
     justify-content: center;
-    margin-top: 2em;
+    /* margin-top: 2em; */
 }
 
 .form-outer-div {
@@ -20,6 +20,7 @@
     border: 1px solid transparent;
     background-color: white;
     border-radius: 8px;
+    box-shadow: 4px 4px 4px 4px rgb(0, 0, 0.9, 0.2);
 }
 
 .form-outer-div p {
@@ -31,20 +32,32 @@ form {
     background-color: white;
 }
 
-form input {
-    background-color: #ECECF1;
-    font-size: large;
+.add-reminder-form  {
+    color: #C55CC7;
 }
 
-.submit-btn {
-    background-color: #0C79FE;
-    color: #FFFFFF;
+.add-reminder-form label {
+    color: #C55CC7;
+}
+
+.add-reminder-form input {
+    /* color: #C55CC7; */
+}
+
+form input {
+    /* background-color: #ECECF1; */
+    /* font-size: large; */
+}
+
+.submit-btn-add {
+    background-color: #7E3C6A;
+    color: #FFFFFF !important;
     font-size: large;
     font-weight: 700;
     cursor: pointer;
     text-align: center;
 }
 
-.submit-btn:hover {
+.submit-btn-add:hover {
     background-color: #1d4678;
 }
