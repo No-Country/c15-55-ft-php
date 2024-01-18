@@ -1,4 +1,3 @@
-import React from 'react';
 import "../footer/Footer.css";
 import { FaGithubAlt } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
