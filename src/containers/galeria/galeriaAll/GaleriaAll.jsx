@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useGlobalContext } from '../../../context';
 import '../galeriaAll/GaleriaAll.css';
-import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore';
+import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../../config/firestore';
-import { getStorage, ref, deleteObject } from "firebase/storage";
+import { ref, deleteObject } from "firebase/storage";
 import { storage } from '../../../config/firestore';
 
 function GaleriaAll() {
-    const { photos, setPhotos, currentUser } = useGlobalContext();
+    const { photos, setPhotos, currentUser, getPhotos } = useGlobalContext();
     console.log(photos);
     const [bigView, setBigView] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState(null);

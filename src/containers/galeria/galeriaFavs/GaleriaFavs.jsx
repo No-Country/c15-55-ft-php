@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useGlobalContext } from '../../../context';
 
 function GaleriaFavs() {
-    const { favPics, setPhotos, currentUser } = useGlobalContext();
-    let [keyId, setKeyId] = useState(1);
+    const { favPics, currentUser } = useGlobalContext();
     const [bigView, setBigView] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState(null);
     console.log(`Favs: `, favPics);
 
     const filteredFavs = favPics.filter((pic) => pic.user_id === currentUser.uid);
+    console.log(`favPics: `, favPics)
     console.log(`Filtered Favs: `, filteredFavs);
 
-    const bigPic = (url, name) => {
+    const bigPic = (url) => {
         setSelectedPhoto(url);
         setBigView(true);
     }
@@ -19,7 +19,6 @@ function GaleriaFavs() {
     const cancel = () => {
         setBigView(false);
         setSelectedPhoto(null);
-        setSelectedName('');
     }
 
     return (
